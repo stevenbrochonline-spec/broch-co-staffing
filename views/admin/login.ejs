@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Admin Login | Broch & Co.</title>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="admin-body">
+    <div class="admin-login">
+        <h1 class="logo">BROCH & CO.</h1>
+        <h2>Admin Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="cta-btn" style="width:100%">Login</button>
+            <div class="form-feedback" id="loginFeedback"></div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const feedback = document.getElementById('loginFeedback');
+            const data = {
+                username: document.getElementById('username').value,
+                password: document.getElementById('password').value
+            };
+            try {
+                const res = await fetch('/admin/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const result = await res.json();
+                if (result.success) {
+                    localStorage.setItem('adminToken', result.token);
+                    window.location.href = '/admin?token=' + result.token;
+                } else {
+                    feedback.textContent = result.message;
+                    feedback.className = 'form-feedback error';
+                }
+            } catch {
+                feedback.textContent = 'Connection error. Please try again.';
+                feedback.className = 'form-feedback error';
+            }
+        });
+    </script>
+</body>
+</html>

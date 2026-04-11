@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Broch & Co. Dev Server",
+      "runtimeExecutable": "/usr/local/bin/node",
+      "runtimeArgs": ["--watch", "server.js"],
+      "port": 3000
+    },
+    {
+      "name": "Broch & Co. Production",
+      "runtimeExecutable": "/usr/local/bin/node",
+      "runtimeArgs": ["server.js"],
+      "port": 3000
+    }
+  ]
+}

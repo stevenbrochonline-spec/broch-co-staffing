@@ -1,0 +1,18 @@
+{
+  "name": "broch-co-staffing",
+  "version": "1.0.0",
+  "description": "Broch & Co. Elite Household Staffing — Dubai, Georgia, Armenia",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.7.0",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-rate-limit": "^7.4.1",
+    "express-validator": "^7.2.1",
+    "helmet": "^8.0.0"
+  }
+}

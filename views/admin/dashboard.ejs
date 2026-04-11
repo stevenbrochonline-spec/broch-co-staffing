@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashboard | Broch & Co. Admin</title>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="admin-body">
+    <div class="admin-wrapper">
+        <aside class="admin-sidebar">
+            <div class="logo">BROCH & CO.</div>
+            <nav>
+                <a href="#overview" class="active">Overview</a>
+                <a href="#inquiries">Inquiries</a>
+                <a href="#consultations">Consultations</a>
+            </nav>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </aside>
+
+        <main class="admin-main">
+            <h1>Dashboard</h1>
+
+            <!-- Stats -->
+            <section id="overview" class="stats-cards">
+                <div class="stat-card">
+                    <span class="stat-number"><%= stats.totalInquiries %></span>
+                    <span class="stat-label">Total Inquiries</span>
+                </div>
+                <div class="stat-card accent">
+                    <span class="stat-number"><%= stats.newInquiries %></span>
+                    <span class="stat-label">New Inquiries</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number"><%= stats.totalConsultations %></span>
+                    <span class="stat-label">Total Bookings</span>
+                </div>
+                <div class="stat-card accent">
+                    <span class="stat-number"><%= stats.pendingConsultations %></span>
+                    <span class="stat-label">Pending Bookings</span>
+                </div>
+            </section>
+
+            <!-- Inquiries Table -->
+            <section id="inquiries" class="admin-section">
+                <h2>Contact Inquiries</h2>
+                <% if (inquiries.length === 0) { %>
+                    <p class="empty">No inquiries yet.</p>
+                <% } else { %>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Country</th>
+                                <th>Service</th>
+                                <th>Message</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% inquiries.forEach(inq => { %>
+                            <tr>
+                                <td><%= new Date(inq.created_at).toLocaleDateString() %></td>
+                                <td><%= inq.name %></td>
+                                <td><%= inq.email %></td>
+                                <td><%= inq.country || '—' %></td>
+                                <td><%= inq.service || '—' %></td>
+                                <td class="msg-cell"><%= inq.message %></td>
+                                <td><span class="status-badge status-<%= inq.status %>"><%= inq.status %></span></td>
+                                <td>
+                                    <select onchange="updateInquiry(<%= inq.id %>, this.value)">
+                                        <option value="new" <%= inq.status === 'new' ? 'selected' : '' %>>New</option>
+                                        <option value="contacted" <%= inq.status === 'contacted' ? 'selected' : '' %>>Contacted</option>
+                                        <option value="closed" <%= inq.status === 'closed' ? 'selected' : '' %>>Closed</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+                <% } %>
+            </section>
+
+            <!-- Consultations Table -->
+            <section id="consultations" class="admin-section">
+                <h2>Consultation Bookings</h2>
+                <% if (consultations.length === 0) { %>
+                    <p class="empty">No bookings yet.</p>
+                <% } else { %>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date Requested</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Service</th>
+                                <th>Preferred Date</th>
+                                <th>Time</th>
+                                <th>Notes</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% consultations.forEach(con => { %>
+                            <tr>
+                                <td><%= new Date(con.created_at).toLocaleDateString() %></td>
+                                <td><%= con.name %></td>
+                                <td><%= con.email %></td>
+                                <td><%= con.service %></td>
+                                <td><%= con.preferred_date %></td>
+                                <td><%= con.preferred_time %></td>
+                                <td class="msg-cell"><%= con.notes || '—' %></td>
+                                <td><span class="status-badge status-<%= con.status %>"><%= con.status %></span></td>
+                                <td>
+                                    <select onchange="updateConsultation(<%= con.id %>, this.value)">
+                                        <option value="pending" <%= con.status === 'pending' ? 'selected' : '' %>>Pending</option>
+                                        <option value="confirmed" <%= con.status === 'confirmed' ? 'selected' : '' %>>Confirmed</option>
+                                        <option value="completed" <%= con.status === 'completed' ? 'selected' : '' %>>Completed</option>
+                                        <option value="cancelled" <%= con.status === 'cancelled' ? 'selected' : '' %>>Cancelled</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+                <% } %>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const token = new URLSearchParams(window.location.search).get('token') || localStorage.getItem('adminToken');
+        if (token) localStorage.setItem('adminToken', token);
+
+        async function updateInquiry(id, status) {
+            await fetch(`/admin/api/inquiries/${id}?token=${token}`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ status })
+            });
+            location.reload();
+        }
+
+        async function updateConsultation(id, status) {
+            await fetch(`/admin/api/consultations/${id}?token=${token}`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ status })
+            });
+            location.reload();
+        }
+
+        function logout() {
+            fetch(`/admin/api/logout?token=${token}`, { method: 'POST' });
+            localStorage.removeItem('adminToken');
+            window.location.href = '/admin/login';
+        }
+    </script>
+</body>
+</html>

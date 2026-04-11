@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact | Broch & Co.</title>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <%- include('partials/nav') %>
+
+    <section class="page-hero">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you. Reach out today.</p>
+    </section>
+
+    <section class="contact-section">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Our Offices</h3>
+                <div class="office">
+                    <h4>Dubai (Headquarters)</h4>
+                    <p>Business Bay, Dubai, UAE</p>
+                    <p>+971 4 XXX XXXX</p>
+                </div>
+                <div class="office">
+                    <h4>Tbilisi</h4>
+                    <p>Vake District, Tbilisi, Georgia</p>
+                    <p>+995 XXX XXX XXX</p>
+                </div>
+                <div class="office">
+                    <h4>Yerevan</h4>
+                    <p>Kentron District, Yerevan, Armenia</p>
+                    <p>+374 XX XXX XXX</p>
+                </div>
+                <div class="office">
+                    <h4>Email</h4>
+                    <p>info@brochandco.com</p>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <h3>Send Us a Message</h3>
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <select id="country" name="country">
+                            <option value="">Select</option>
+                            <option value="georgia">Georgia</option>
+                            <option value="armenia">Armenia</option>
+                            <option value="uae">UAE</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Interest</label>
+                        <select id="service" name="service">
+                            <option value="">Select</option>
+                            <option value="nanny">Professional Nanny</option>
+                            <option value="chef">Private Chef</option>
+                            <option value="housekeeper">Executive Housekeeper</option>
+                            <option value="multiple">Multiple Services</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="cta-btn">Send Message</button>
+                <div class="form-feedback" id="contactFeedback"></div>
+            </form>
+        </div>
+    </section>
+
+    <%- include('partials/footer') %>
+    <script src="/js/forms.js"></script>
+</body>
+</html>
