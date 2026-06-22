@@ -19,6 +19,8 @@ const candidates = [
   {
     displayName: 'Mary Ann',
     slug: 'mary-ann',
+    photoUrl: null,
+    photoAlt: 'Profile photo for Mary Ann',
     role: 'Nanny / Housekeeper / Family Assistant',
     statusLabel: 'Available for consultation',
     profileType: 'real_available',
@@ -59,6 +61,8 @@ const candidates = [
   {
     displayName: 'Pia',
     slug: 'pia',
+    photoUrl: null,
+    photoAlt: 'Profile photo for Pia',
     role: 'Nanny / Housekeeper',
     statusLabel: 'Recently placed with a family',
     profileType: 'real_placed',
@@ -98,6 +102,8 @@ const candidates = [
   {
     displayName: 'Jenny',
     slug: 'jenny',
+    photoUrl: null,
+    photoAlt: 'Profile photo for Jenny',
     role: 'Nanny / Family Assistant',
     statusLabel: 'Recently placed with a family',
     profileType: 'real_placed',
@@ -137,6 +143,8 @@ const candidates = [
   {
     slug: 'maria',
     displayName: 'Maria',
+    photoUrl: null,
+    photoAlt: 'Profile photo for Maria',
     role: 'Nanny / Childcare Helper',
     profileType: 'representative',
     statusLabel: 'Representative profile',
@@ -170,6 +178,8 @@ const candidates = [
   {
     slug: 'grace',
     displayName: 'Grace',
+    photoUrl: null,
+    photoAlt: 'Profile photo for Grace',
     role: 'Housekeeper / Family Assistant',
     profileType: 'real_placed',
     statusLabel: 'Currently placed with a family',
@@ -203,6 +213,8 @@ const candidates = [
   {
     slug: 'ana',
     displayName: 'Ana',
+    photoUrl: null,
+    photoAlt: 'Profile photo for Ana',
     role: 'Nanny / Household Support',
     profileType: 'representative',
     statusLabel: 'Representative profile',

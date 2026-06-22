@@ -14,7 +14,7 @@
 
     <section class="protection-note">
         <p>Public profiles are intentionally limited to protect candidate privacy and maintain a professional introduction process. Full CVs, reference details, and direct introductions are coordinated only through Trusted Household &amp; Childcare after consultation.</p>
-        <p class="protection-sub">Some profiles may be representative examples or currently placed candidates, shown to illustrate the level and type of household talent we review.</p>
+        <p class="protection-sub">Candidate photos are shown only where profile-use permission has been provided. Direct contact details and full CVs are never published. Some profiles may be representative examples or currently placed candidates, shown to illustrate the level and type of household talent we review.</p>
     </section>
 
     <section class="candidates-section">
@@ -23,39 +23,38 @@
                 var primaryHref = c.profileType === 'real_placed' ? '/contact' : '/book';
             %>
             <article class="candidate-card">
-                <div class="candidate-head">
+
+                <div class="card-photo-area">
+                    <% if (c.photoUrl) { %>
+                    <img class="candidate-photo" src="<%= c.photoUrl %>" alt="<%= c.photoAlt || 'Candidate photo' %>" loading="lazy">
+                    <% } else { %>
                     <div class="candidate-avatar" aria-hidden="true"><%= c.displayName.charAt(0) %></div>
-                    <div>
-                        <h3><%= c.displayName %></h3>
-                        <p class="candidate-role"><%= c.role %></p>
-                    </div>
+                    <% } %>
+                </div>
+
+                <div class="card-identity">
+                    <h3><%= c.displayName %></h3>
+                    <p class="candidate-role"><%= c.role %></p>
                     <span class="candidate-status status-<%= c.profileType.replace('real_', '') %>"><%= c.statusLabel %></span>
                 </div>
+
+                <p class="card-bio"><%= c.shortBio %></p>
 
                 <ul class="candidate-meta">
                     <li><span>Experience</span><%= typeof c.yearsExperience === 'number' ? c.yearsExperience + ' years' : c.yearsExperience %></li>
                     <li><span>Languages</span><%= c.languages.join(', ') %></li>
-                    <li><span><%= c.profileType === 'real_placed' ? 'Placement region' : 'Availability' %></span><%= c.availabilityRegion %></li>
+                    <li><span><%= c.profileType === 'real_placed' ? 'Region' : 'Availability' %></span><%= c.availabilityRegion %></li>
                 </ul>
 
                 <div class="skill-tags">
                     <% c.skills.slice(0, 5).forEach(function(s) { %><span class="tag"><%= s %></span><% }); %>
                 </div>
 
-                <p class="trust-note"><%= Array.isArray(c.trustNotes) ? c.trustNotes[0] : c.trustNotes %></p>
-
-                <div class="cv-locked" aria-label="CV preview locked">
-                    <div class="cv-lines"><span></span><span></span><span></span><span></span></div>
-                    <div class="cv-lock-overlay">
-                        <span class="cv-lock-icon">&#128274;</span>
-                        <span>Full CV available through Trusted Household &amp; Childcare</span>
-                    </div>
-                </div>
-
                 <div class="candidate-actions">
                     <a href="/candidates/<%= c.slug %>" class="card-link">View profile &rarr;</a>
                     <a href="<%= primaryHref %>" class="cta-btn"><%= c.ctaLabel %></a>
                 </div>
+
             </article>
             <% }); %>
         </div>
