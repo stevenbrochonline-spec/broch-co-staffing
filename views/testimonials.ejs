@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Testimonials | Trusted Household &amp; Childcare</title>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <%- include('partials/nav') %>
+
+    <section class="page-hero">
+        <h1>Testimonials</h1>
+        <p>What families say about our private, personal approach to household and childcare introductions.</p>
+    </section>
+
+    <section class="testimonials-section">
+        <div class="testimonial-grid">
+            <% testimonials.forEach(function(t) { %>
+            <figure class="testimonial-card">
+                <blockquote>&ldquo;<%= t.quote %>&rdquo;</blockquote>
+                <figcaption><%= t.attribution %></figcaption>
+            </figure>
+            <% }); %>
+        </div>
+        <p class="muted center">Testimonials are shared anonymously to protect our clients&rsquo; privacy.</p>
+    </section>
+
+    <section class="cta-section">
+        <h2>Ready to find the right person for your home?</h2>
+        <p>Book a consultation and we will prepare a private shortlist for your family.</p>
+        <a href="/book" class="cta-btn">Book a consultation</a>
+    </section>
+
+    <%- include('partials/footer') %>
+</body>
+</html>
