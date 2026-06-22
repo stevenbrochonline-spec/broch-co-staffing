@@ -17,6 +17,46 @@
 
 const candidates = [
   {
+    displayName: 'Mary Ann',
+    slug: 'mary-ann',
+    role: 'Nanny / Housekeeper / Family Assistant',
+    statusLabel: 'Available for consultation',
+    profileType: 'real_available',
+    nationality: 'Filipino',
+    availabilityRegion: 'UAE / Hong Kong / International families by arrangement',
+    yearsExperience: '7+ years in private household, nanny, and family support roles',
+    languages: ['English', 'Tagalog'],
+    childcareExperience:
+      'Infant care, toddler support, school-age children, twins, homework support, daily routines, meal preparation, clothing organization, and personal care assistance.',
+    householdExperience:
+      'Private household cleaning, laundry, ironing, household organization, grocery lists, food preparation, wardrobe support, supplies coordination, and family travel preparation.',
+    skills: [
+      'Infant and twin care',
+      'Private household organization',
+      'Laundry and ironing',
+      'Meal preparation support',
+      'Children’s routines and homework support',
+      'VIP/private-family discretion',
+      'Healthcare assistant training background',
+    ],
+    shortBio:
+      'Mary Ann is a Filipino nanny, housekeeper, and family assistant with experience supporting private households in the UAE and Hong Kong. Her background combines childcare, household organization, laundry, food preparation, and practical family support. She has worked in discreet private-family environments and has experience caring for infants, twins, and school-age children.',
+    cvSummary:
+      'Her experience includes nanny and housemaid responsibilities across private households, including infant and twin care, children’s routines, household cleaning, laundry, ironing, food preparation, grocery support, and family organization. She also has a nursing and healthcare-assistant training background, which adds useful practical understanding for childcare and family-care environments.',
+    workHistorySummary:
+      'Mary Ann has supported private households in the UAE and Hong Kong, including VIP/private-family settings. Her responsibilities included maintaining organized homes, supporting children’s daily needs, preparing food, handling laundry and ironing, assisting with travel preparation, helping with school homework and projects, and maintaining household supplies and routines.',
+    recommendationExcerpt:
+      'References and additional background details are available through Trusted Household & Childcare after consultation. Direct candidate contact details and private household information are withheld to protect candidate privacy and maintain a professional introduction process.',
+    trustNotes: [
+      'Profile prepared from candidate CV documentation',
+      'Direct phone, email, address, and private identity details removed',
+      'Named employers and private households anonymized',
+      'References available through consultation where appropriate',
+      'Full CV access coordinated only through Trusted Household & Childcare',
+    ],
+    ctaLabel: 'Request CV access',
+  },
+  {
     slug: 'maria',
     displayName: 'Maria',
     role: 'Nanny / Childcare Helper',

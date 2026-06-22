@@ -681,6 +681,26 @@ footer {
     font-style: italic;
     margin-bottom: 20px;
 }
+.trust-note-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    text-align: left;
+}
+.trust-note-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    color: var(--gray);
+    font-size: 0.82rem;
+}
+.trust-note-list li::before {
+    content: '\2713';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: 700;
+}
 
 /* ── Locked / blurred CV preview ── */
 .cv-locked {

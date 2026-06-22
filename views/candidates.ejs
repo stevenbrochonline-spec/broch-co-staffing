@@ -33,7 +33,7 @@
                 </div>
 
                 <ul class="candidate-meta">
-                    <li><span>Experience</span><%= c.yearsExperience %> years</li>
+                    <li><span>Experience</span><%= typeof c.yearsExperience === 'number' ? c.yearsExperience + ' years' : c.yearsExperience %></li>
                     <li><span>Languages</span><%= c.languages.join(', ') %></li>
                     <li><span><%= c.profileType === 'real_placed' ? 'Placement region' : 'Availability' %></span><%= c.availabilityRegion %></li>
                 </ul>
@@ -42,7 +42,7 @@
                     <% c.skills.slice(0, 5).forEach(function(s) { %><span class="tag"><%= s %></span><% }); %>
                 </div>
 
-                <p class="trust-note"><%= c.trustNotes %></p>
+                <p class="trust-note"><%= Array.isArray(c.trustNotes) ? c.trustNotes[0] : c.trustNotes %></p>
 
                 <div class="cv-locked" aria-label="CV preview locked">
                     <div class="cv-lines"><span></span><span></span><span></span><span></span></div>
