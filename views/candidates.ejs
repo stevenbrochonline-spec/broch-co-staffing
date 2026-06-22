@@ -50,6 +50,12 @@
                     <% c.skills.slice(0, 5).forEach(function(s) { %><span class="tag"><%= s %></span><% }); %>
                 </div>
 
+                <ul class="protection-badges" aria-label="Privacy protections">
+                    <li><span class="protect-icon">&#128274;</span> Contact details protected</li>
+                    <li><span class="protect-icon">&#128196;</span> CV available after consultation</li>
+                    <li><span class="protect-icon">&#9989;</span> References by request</li>
+                </ul>
+
                 <div class="candidate-actions">
                     <a href="/candidates/<%= c.slug %>" class="card-link">View profile &rarr;</a>
                     <a href="<%= primaryHref %>" class="cta-btn"><%= c.ctaLabel %></a>
