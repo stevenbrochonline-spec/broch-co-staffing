@@ -8,9 +8,11 @@
     <%- include('partials/nav') %>
 
     <section class="page-hero">
-        <h1>Book a Consultation</h1>
-        <p>Schedule a complimentary consultation with our placement specialists.</p>
+        <h1>Request a Private Consultation</h1>
+        <p>A complimentary, no-pressure conversation about your family&rsquo;s needs &mdash; the first step before we share any candidates.</p>
     </section>
+
+    <%- include('partials/consultation-promise') %>
 
     <section class="booking-section">
         <form class="booking-form" id="bookingForm">
@@ -79,9 +81,10 @@
                 <label for="notes">Additional Notes</label>
                 <textarea id="notes" name="notes" rows="4" placeholder="Tell us about your household needs..."></textarea>
             </div>
-            <button type="submit" class="cta-btn">Book Consultation</button>
+            <button type="submit" class="cta-btn">Request a private consultation</button>
             <div class="form-feedback" id="bookingFeedback"></div>
         </form>
+        <p class="booking-alt">Prefer to look first? <a href="/candidates">View candidate shortlist</a></p>
     </section>
 
     <%- include('partials/footer') %>
