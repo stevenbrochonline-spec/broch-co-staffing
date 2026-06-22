@@ -1,5 +1,6 @@
 const Database = require('better-sqlite3');
 const path = require('path');
+const { hashPassword } = require('../lib/password');
 
 const DB_PATH = process.env.VERCEL
   ? path.join('/tmp', 'broch.db')
@@ -50,11 +51,21 @@ function initialize() {
     );
   `);
 
-  // Seed default admin (password: admin123 — change in production)
-  const crypto = require('crypto');
-  const hash = crypto.createHash('sha256').update('admin123').digest('hex');
-  const stmt = db.prepare('INSERT OR IGNORE INTO admin_users (username, password_hash) VALUES (?, ?)');
-  stmt.run('admin', hash);
+  // Seed admin strictly from environment. No hard-coded credentials.
+  const adminUser = process.env.ADMIN_USERNAME;
+  const adminPass = process.env.ADMIN_PASSWORD;
+  if (adminUser && adminPass) {
+    const hash = hashPassword(adminPass);
+    db.prepare(
+      `INSERT INTO admin_users (username, password_hash) VALUES (?, ?)
+       ON CONFLICT(username) DO UPDATE SET password_hash = excluded.password_hash`
+    ).run(adminUser, hash);
+  } else {
+    console.warn(
+      '[WARN] ADMIN_USERNAME and/or ADMIN_PASSWORD not set — no admin user seeded. ' +
+      'Admin login is disabled until both environment variables are provided.'
+    );
+  }
 
   db.close();
 }
