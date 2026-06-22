@@ -492,6 +492,7 @@ footer {
         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
     .hamburger { display: flex; }
+    .logo { font-size: 1.1rem; letter-spacing: 0.5px; }
     .why-grid,
     .about-grid,
     .contact-grid { grid-template-columns: 1fr; }
