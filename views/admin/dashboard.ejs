@@ -136,11 +136,10 @@
     </div>
 
     <script>
-        const token = new URLSearchParams(window.location.search).get('token') || localStorage.getItem('adminToken');
-        if (token) localStorage.setItem('adminToken', token);
-
+        // Auth is carried by an httpOnly session cookie, sent automatically
+        // with these same-origin requests — no token in the URL.
         async function updateInquiry(id, status) {
-            await fetch(`/admin/api/inquiries/${id}?token=${token}`, {
+            await fetch(`/admin/api/inquiries/${id}`, {
                 method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ status })
@@ -149,7 +148,7 @@
         }
 
         async function updateConsultation(id, status) {
-            await fetch(`/admin/api/consultations/${id}?token=${token}`, {
+            await fetch(`/admin/api/consultations/${id}`, {
                 method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ status })
@@ -157,9 +156,8 @@
             location.reload();
         }
 
-        function logout() {
-            fetch(`/admin/api/logout?token=${token}`, { method: 'POST' });
-            localStorage.removeItem('adminToken');
+        async function logout() {
+            await fetch('/admin/api/logout', { method: 'POST' });
             window.location.href = '/admin/login';
         }
     </script>

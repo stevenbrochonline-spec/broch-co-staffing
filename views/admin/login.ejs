@@ -38,8 +38,8 @@
                 });
                 const result = await res.json();
                 if (result.success) {
-                    localStorage.setItem('adminToken', result.token);
-                    window.location.href = '/admin?token=' + result.token;
+                    // Auth is carried by an httpOnly session cookie set by the server.
+                    window.location.href = '/admin';
                 } else {
                     feedback.textContent = result.message;
                     feedback.className = 'form-feedback error';
