@@ -786,3 +786,25 @@ footer {
     font-weight: 600;
     font-size: 0.9rem;
 }
+
+/* ── Floating WhatsApp button (company contact) ── */
+.whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #25d366;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    z-index: 1500;
+    transition: transform 0.2s, background 0.2s;
+}
+.whatsapp-float:hover {
+    background: #1ebe5d;
+    transform: scale(1.06);
+}
