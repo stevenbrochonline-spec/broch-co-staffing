@@ -57,6 +57,84 @@ const candidates = [
     ctaLabel: 'Request CV access',
   },
   {
+    displayName: 'Pia',
+    slug: 'pia',
+    role: 'Nanny / Housekeeper',
+    statusLabel: 'Recently placed with a family',
+    profileType: 'real_placed',
+    nationality: 'Filipino',
+    availabilityRegion: 'Recently placed (private family) — similar candidates available',
+    yearsExperience: '8+ years in private household and childcare roles',
+    languages: ['English', 'Tagalog'],
+    childcareExperience:
+      'Infant and toddler care, school-age children, daily routines, school runs, homework support, mealtimes, and bath and bedtime routines.',
+    householdExperience:
+      'Private household cleaning, laundry and ironing, wardrobe care, home cooking, grocery lists, and day-to-day household organization alongside childcare.',
+    skills: [
+      'Infant and toddler care',
+      'Children’s routines and homework support',
+      'High-standard housekeeping',
+      'Laundry and ironing',
+      'Home cooking and meal preparation',
+      'Discreet private-family support',
+    ],
+    shortBio:
+      'Pia is a Filipino nanny and housekeeper who was recently placed with a private family. Her background combines attentive childcare with dependable household support — keeping organized homes, supporting children’s daily routines, and managing cooking, laundry, and household tasks. Her profile is shown to illustrate the calibre of household professional we place; she is not currently available.',
+    cvSummary:
+      'More than eight years across private household and childcare roles, covering infant and toddler care, children’s routines and homework support, high-standard housekeeping, laundry and ironing, home cooking, and household organization.',
+    workHistorySummary:
+      'Pia has supported private families in nanny and housekeeper roles, balancing childcare with everyday household duties — school runs, homework help, mealtimes, cleaning, laundry, and family organization. Named employers and private households are withheld to protect candidate and family privacy.',
+    recommendationExcerpt:
+      'References and additional background details are available through Trusted Household & Childcare after consultation. Direct candidate contact details and private household information are withheld to protect candidate privacy and maintain a professional introduction process.',
+    trustNotes: [
+      'Profile prepared from candidate CV documentation',
+      'Direct phone, email, address, and private identity details removed',
+      'Named employers and private households anonymized',
+      'References available through consultation where appropriate',
+      'Full CV access coordinated only through Trusted Household & Childcare',
+    ],
+    ctaLabel: 'Request similar candidate',
+  },
+  {
+    displayName: 'Jenny',
+    slug: 'jenny',
+    role: 'Nanny / Family Assistant',
+    statusLabel: 'Recently placed with a family',
+    profileType: 'real_placed',
+    nationality: 'Filipino',
+    availabilityRegion: 'Recently placed (private family) — similar candidates available',
+    yearsExperience: '9+ years in nanny and family support roles',
+    languages: ['English', 'Tagalog'],
+    childcareExperience:
+      'Newborn and infant care, toddler support, school-age children, feeding and sleep routines, homework support, and activity planning.',
+    householdExperience:
+      'Light-to-full household support around childcare — children’s laundry, tidying and organizing family spaces, meal preparation, and helping keep daily family routines running smoothly.',
+    skills: [
+      'Newborn and infant care',
+      'Feeding and sleep routines',
+      'School-age childcare',
+      'Homework and activity support',
+      'Child-focused meal preparation',
+      'Reliable family assistance',
+    ],
+    shortBio:
+      'Jenny is a Filipino nanny and family assistant who was recently placed with a private family. She is experienced across the early years through to school-age children — establishing gentle routines, supporting learning and activities, and providing dependable day-to-day family help. Her profile is shown to illustrate the level of household talent we place; she is not currently available.',
+    cvSummary:
+      'More than nine years in nanny and family support roles, including newborn and infant care, feeding and sleep routines, school-age childcare, homework and activity support, and household routines that keep family life organized.',
+    workHistorySummary:
+      'Jenny has worked with private families as a nanny and family assistant, caring for children from infancy through school age while supporting daily routines, mealtimes, and household organization. Named employers and private households are withheld to protect candidate and family privacy.',
+    recommendationExcerpt:
+      'References and additional background details are available through Trusted Household & Childcare after consultation. Direct candidate contact details and private household information are withheld to protect candidate privacy and maintain a professional introduction process.',
+    trustNotes: [
+      'Profile prepared from candidate CV documentation',
+      'Direct phone, email, address, and private identity details removed',
+      'Named employers and private households anonymized',
+      'References available through consultation where appropriate',
+      'Full CV access coordinated only through Trusted Household & Childcare',
+    ],
+    ctaLabel: 'Request similar candidate',
+  },
+  {
     slug: 'maria',
     displayName: 'Maria',
     role: 'Nanny / Childcare Helper',
