@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= candidate.displayName %> — <%= candidate.role %> | Trusted Household &amp; Childcare</title>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <%- include('partials/nav') %>
+
+    <section class="page-hero">
+        <h1><%= candidate.displayName %></h1>
+        <p><%= candidate.role %> &middot; <%= candidate.yearsExperience %> years&rsquo; experience</p>
+    </section>
+
+    <section class="candidate-profile">
+        <div class="profile-grid">
+            <aside class="profile-side">
+                <div class="candidate-avatar large" aria-hidden="true"><%= candidate.displayName.charAt(0) %></div>
+                <span class="candidate-status status-<%= candidate.status.toLowerCase().split(' ')[0] %>"><%= candidate.status %></span>
+
+                <ul class="candidate-meta">
+                    <li><span>Role</span><%= candidate.role %></li>
+                    <% if (candidate.nationality) { %><li><span>Nationality</span><%= candidate.nationality %></li><% } %>
+                    <li><span>Availability</span><%= candidate.availabilityRegion %></li>
+                    <li><span>Experience</span><%= candidate.yearsExperience %> years</li>
+                    <li><span>Languages</span><%= candidate.languages.join(', ') %></li>
+                    <li><span>Childcare ages</span><%= candidate.childcareAgeExperience %></li>
+                </ul>
+
+                <p class="trust-note">Personally reviewed, screened, and reference-checked where available.</p>
+
+                <a href="/book" class="cta-btn full">Request shortlist access</a>
+                <a href="/contact" class="card-link">Discuss this candidate &rarr;</a>
+            </aside>
+
+            <div class="profile-main">
+                <div class="profile-section">
+                    <h2>About</h2>
+                    <p><%= candidate.bio %></p>
+                </div>
+
+                <div class="profile-section">
+                    <h2>Household experience</h2>
+                    <p><%= candidate.householdExperience %></p>
+                </div>
+
+                <div class="profile-section">
+                    <h2>CV summary</h2>
+                    <p><%= candidate.cvSummary %></p>
+                </div>
+
+                <div class="profile-section">
+                    <h2>Work experience</h2>
+                    <ul class="profile-list">
+                        <% candidate.workExperienceSummary.forEach(function(w) { %><li><%= w %></li><% }); %>
+                    </ul>
+                </div>
+
+                <div class="profile-section">
+                    <h2>Skills</h2>
+                    <div class="skill-tags">
+                        <% candidate.skills.forEach(function(s) { %><span class="tag"><%= s %></span><% }); %>
+                    </div>
+                </div>
+
+                <div class="profile-section">
+                    <h2>Recommendation letter excerpt</h2>
+                    <blockquote class="reco-excerpt"><%= candidate.recommendationExcerpt %></blockquote>
+                    <p class="muted">References are available through Trusted Household &amp; Childcare.</p>
+                </div>
+
+                <div class="cv-locked wide" aria-label="CV preview locked">
+                    <div class="cv-lines"><span></span><span></span><span></span><span></span><span></span></div>
+                    <div class="cv-lock-overlay">
+                        <span class="cv-lock-icon">&#128274;</span>
+                        <span>Full CV and recommendation letter available through Trusted Household &amp; Childcare</span>
+                    </div>
+                </div>
+
+                <div class="protection-note inline">
+                    <p>To protect candidate privacy and maintain a professional process, direct contact details are not published. Full CV, reference details, and direct introductions are coordinated only through Trusted Household &amp; Childcare after consultation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Interested in <%= candidate.displayName %>?</h2>
+        <p>Book a consultation and we will coordinate a private introduction.</p>
+        <a href="/book" class="cta-btn">Request shortlist access</a>
+    </section>
+
+    <%- include('partials/footer') %>
+</body>
+</html>
