@@ -36,7 +36,11 @@
 
         <div class="profile-grid">
             <aside class="profile-side">
+                <% if (candidate.photoUrl) { %>
+                <img class="candidate-photo large" src="<%= candidate.photoUrl %>" alt="<%= candidate.photoAlt || 'Candidate photo' %>">
+                <% } else { %>
                 <div class="candidate-avatar large" aria-hidden="true"><%= candidate.displayName.charAt(0) %></div>
+                <% } %>
                 <span class="candidate-status status-<%= candidate.profileType.replace('real_', '') %>"><%= candidate.statusLabel %></span>
 
                 <ul class="candidate-meta">

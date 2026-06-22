@@ -502,6 +502,10 @@ footer {
     .profile-grid { grid-template-columns: 1fr; }
     .shortlist-inner { grid-template-columns: 1fr; }
     .trust-lead-inner { grid-template-columns: 1fr; }
+    .candidate-grid { grid-template-columns: 1fr; gap: 20px; }
+    .candidates-section { padding: 40px 5% 60px; }
+    .candidate-card { padding: 22px 18px 18px; }
+    .candidate-actions .cta-btn { padding: 15px 20px; font-size: 1rem; }
 }
 
 /* ── Private Candidate Shortlist (homepage CTA) ── */
@@ -579,61 +583,90 @@ footer {
 }
 .candidate-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
 }
 .candidate-card {
     background: var(--white);
-    border-radius: 4px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.07);
+    padding: 28px 24px 20px;
     display: flex;
     flex-direction: column;
+    gap: 0;
 }
-.candidate-head {
+/* Photo / avatar area — centered at top */
+.card-photo-area {
     display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+.candidate-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border);
+}
+.candidate-photo.large {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 16px;
+    display: block;
 }
 .candidate-avatar {
-    width: 54px;
-    height: 54px;
+    width: 80px;
+    height: 80px;
     flex-shrink: 0;
     border-radius: 50%;
     background: var(--dark);
     color: var(--gold);
     font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .candidate-avatar.large {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
     font-size: 2.2rem;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
-.candidate-head h3 {
+/* Name / role / status grouped cleanly */
+.card-identity {
+    text-align: center;
+    margin-bottom: 14px;
+}
+.card-identity h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     color: var(--dark);
+    margin-bottom: 4px;
 }
 .candidate-role {
     color: var(--gold);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     font-weight: 600;
+    margin-bottom: 8px;
+}
+.card-identity .candidate-status {
+    display: inline-block;
+    margin-top: 4px;
+}
+.card-bio {
+    font-size: 0.88rem;
+    color: var(--gray);
+    line-height: 1.6;
+    margin-bottom: 16px;
 }
 .candidate-status {
-    margin-left: auto;
-    align-self: flex-start;
     font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 5px 10px;
-    border-radius: 2px;
+    letter-spacing: 0.8px;
+    padding: 4px 10px;
+    border-radius: 20px;
     background: #eee;
     color: var(--gray);
     white-space: nowrap;
@@ -645,34 +678,35 @@ footer {
 .candidate-status.status-representative { background: #f3eee6; color: #8a6d3b; }
 .candidate-meta {
     list-style: none;
-    margin: 0 0 20px;
+    margin: 0 0 16px;
     padding: 0;
 }
 .candidate-meta li {
     display: flex;
     justify-content: space-between;
-    gap: 15px;
-    padding: 8px 0;
+    gap: 12px;
+    padding: 7px 0;
     border-bottom: 1px solid var(--border);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--dark);
 }
 .candidate-meta li span {
     color: var(--gray);
     font-weight: 600;
+    flex-shrink: 0;
 }
 .skill-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 6px;
     margin-bottom: 20px;
 }
 .tag {
     background: var(--light);
     border: 1px solid var(--border);
     color: var(--gray);
-    font-size: 0.8rem;
-    padding: 5px 12px;
+    font-size: 0.78rem;
+    padding: 4px 11px;
     border-radius: 20px;
 }
 .trust-note {
@@ -744,10 +778,20 @@ footer {
 .cv-lock-icon { font-size: 1.6rem; }
 .candidate-actions {
     margin-top: auto;
+    padding-top: 8px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     align-items: center;
+}
+.candidate-actions .cta-btn {
+    width: 100%;
+    text-align: center;
+    padding: 13px 20px;
+    font-size: 0.9rem;
+}
+.candidate-actions .card-link {
+    font-size: 0.88rem;
 }
 
 /* ── Candidate profile ── */
@@ -772,8 +816,9 @@ footer {
     top: 100px;
 }
 .profile-side .candidate-meta { text-align: left; margin-top: 20px; }
-.profile-side .candidate-status { margin: 15px 0 0; display: inline-block; }
+.profile-side .candidate-status { margin: 12px 0 0; display: inline-block; }
 .profile-side .cta-btn.full { display: block; margin: 20px 0 12px; }
+.profile-side .candidate-photo.large { border-radius: 50%; border: 2px solid var(--border); }
 .profile-section { margin-bottom: 35px; }
 .profile-section h2 {
     font-family: 'Playfair Display', serif;
