@@ -19,11 +19,14 @@
             real_placed: 'Currently placed with a family and not available. This profile is shown to illustrate the type of household talent we place — we can introduce similar available candidates.',
             representative: 'Representative profile — an illustrative example of the level and type of household talent we review. Introductions are arranged through Trusted Household & Childcare.'
         }[candidate.profileType];
+        // yearsExperience may be a number (e.g. 8) or a descriptive string (e.g. "7+ years ...").
+        var expText = (typeof candidate.yearsExperience === 'number') ? candidate.yearsExperience + ' years’ experience' : candidate.yearsExperience;
+        var expMeta = (typeof candidate.yearsExperience === 'number') ? candidate.yearsExperience + ' years' : candidate.yearsExperience;
     %>
 
     <section class="page-hero">
         <h1><%= candidate.displayName %></h1>
-        <p><%= candidate.role %> &middot; <%= candidate.yearsExperience %> years&rsquo; experience</p>
+        <p><%= candidate.role %> &middot; <%= expText %></p>
     </section>
 
     <section class="candidate-profile">
@@ -40,12 +43,18 @@
                     <li><span>Role</span><%= candidate.role %></li>
                     <% if (candidate.nationality) { %><li><span>Nationality</span><%= candidate.nationality %></li><% } %>
                     <li><span><%= candidate.profileType === 'real_placed' ? 'Placement region' : 'Availability' %></span><%= candidate.availabilityRegion %></li>
-                    <li><span>Experience</span><%= candidate.yearsExperience %> years</li>
+                    <li><span>Experience</span><%= expMeta %></li>
                     <li><span>Languages</span><%= candidate.languages.join(', ') %></li>
                     <li><span>Childcare</span><%= candidate.childcareExperience %></li>
                 </ul>
 
+                <% if (Array.isArray(candidate.trustNotes)) { %>
+                <ul class="trust-note-list">
+                    <% candidate.trustNotes.forEach(function(n) { %><li><%= n %></li><% }); %>
+                </ul>
+                <% } else { %>
                 <p class="trust-note"><%= candidate.trustNotes %></p>
+                <% } %>
 
                 <a href="<%= primaryHref %>" class="cta-btn full"><%= candidate.ctaLabel %></a>
                 <a href="<%= secondaryCta.href %>" class="card-link"><%= secondaryCta.label %> &rarr;</a>
@@ -69,9 +78,13 @@
 
                 <div class="profile-section">
                     <h2>Work history</h2>
+                    <% if (Array.isArray(candidate.workHistorySummary)) { %>
                     <ul class="profile-list">
                         <% candidate.workHistorySummary.forEach(function(w) { %><li><%= w %></li><% }); %>
                     </ul>
+                    <% } else { %>
+                    <p><%= candidate.workHistorySummary %></p>
+                    <% } %>
                 </div>
 
                 <div class="profile-section">
