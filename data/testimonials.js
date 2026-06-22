@@ -4,22 +4,22 @@
 const testimonials = [
   {
     quote:
-      'We were introduced to a wonderful nanny within days. The process was discreet, professional and completely hands-on.',
+      'They took the time to understand our home before suggesting anyone. The nanny they introduced has been a calm, caring part of our family ever since.',
     attribution: 'Private family, Dubai',
   },
   {
     quote:
-      'Trusted Household & Childcare understood exactly what our home needed. The candidate they shortlisted has been with us ever since.',
+      'It felt personal from the first conversation. They listened, shortlisted thoughtfully, and the person they introduced settled in with us beautifully.',
     attribution: 'Expat family, Tbilisi',
   },
   {
     quote:
-      'What we valued most was the privacy and the careful selection. We never felt like we were sifting through a database.',
+      'What we appreciated most was the privacy and the care taken at each step. We never felt like we were sifting through a database on our own.',
     attribution: 'Parent, Singapore',
   },
   {
     quote:
-      'A genuinely professional, personal service. Every introduction was considered and well-matched.',
+      'A warm, professional and genuinely personal service. Every introduction felt considered and well matched to our household.',
     attribution: 'Family office client, UAE',
   },
 ];
