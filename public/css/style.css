@@ -541,6 +541,35 @@ footer {
 .protection-note.inline {
     margin: 30px 0 0;
 }
+.protection-sub {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* ── Candidate profile-type banner ── */
+.profile-banner {
+    max-width: 1100px;
+    margin: 0 auto 30px;
+    padding: 16px 22px;
+    border-radius: 4px;
+    font-size: 0.92rem;
+    color: var(--dark);
+    border-left: 3px solid var(--gold);
+    background: #f7f3ec;
+}
+.profile-banner.type-placed {
+    border-left-color: #44507d;
+    background: #eef0f6;
+}
+.profile-banner.type-representative {
+    border-left-color: #8a6d3b;
+    background: #f3eee6;
+}
+.profile-banner.type-available {
+    border-left-color: #2e7d44;
+    background: #e6f4ea;
+}
 
 /* ── Candidate cards ── */
 .candidates-section {
@@ -612,6 +641,8 @@ footer {
 .candidate-status.status-available { background: #e6f4ea; color: #2e7d44; }
 .candidate-status.status-shortlisting { background: #fdf3e0; color: #b07d2b; }
 .candidate-status.status-interview { background: #eef0f6; color: #44507d; }
+.candidate-status.status-placed { background: #eef0f6; color: #44507d; }
+.candidate-status.status-representative { background: #f3eee6; color: #8a6d3b; }
 .candidate-meta {
     list-style: none;
     margin: 0 0 20px;
