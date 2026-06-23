@@ -315,6 +315,7 @@ nav {
     padding: 80px 5%;
 }
 .how-trust .section-title { margin-bottom: 12px; }
+.how-trust .section-sub { margin-top: 0; }
 .how-trust-grid {
     max-width: 1100px;
     margin: 0 auto;
@@ -1405,8 +1406,6 @@ footer {
     color: var(--gold);
     font-weight: 700;
 }
-<<<<<<< Updated upstream
-=======
 
 /* ── Final mobile layout guard ──
    Keep mobile pages within viewport. This sits at the end so it overrides
@@ -1583,4 +1582,3 @@ footer {
         width: 100%;
     }
 }
->>>>>>> Stashed changes
