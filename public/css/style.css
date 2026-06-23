@@ -103,37 +103,98 @@ nav {
 
 /* ── Hero ── */
 .hero {
-    height: 75vh;
+    min-height: 86vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    /* Warm, premium overlay: gentle at the top, deeper toward the base for
+       legibility, with a subtle warm tint over the cool interior photo. */
+    background: linear-gradient(rgba(26,20,14,0.45), rgba(26,20,14,0.78)),
+                radial-gradient(120% 90% at 50% 0%, rgba(197,160,89,0.10), rgba(26,20,14,0) 60%),
                 url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80');
     background-size: cover;
     background-position: center;
     color: var(--white);
-    padding: 0 5%;
+    padding: 90px 5%;
+}
+.hero-content {
+    max-width: 860px;
+    margin: 0 auto;
 }
 .hero h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
-    margin-bottom: 20px;
+    font-size: 3.7rem;
+    line-height: 1.12;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+    text-shadow: 0 2px 24px rgba(0,0,0,0.35);
 }
 .hero p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto 30px;
+    font-size: 1.18rem;
+    line-height: 1.7;
+    max-width: 720px;
+    margin: 0 auto 24px;
     font-weight: 300;
 }
+.hero #hero-sub {
+    color: #f3ede3;
+    max-width: 760px;
+}
 .hero .hero-support {
-    font-size: 1rem;
-    max-width: 640px;
-    margin: -10px auto 32px;
-    color: #e8e0d2;
+    font-size: 0.98rem;
+    max-width: 660px;
+    margin: 0 auto 34px;
+    color: #ddd2bf;
     font-weight: 300;
     font-style: italic;
 }
+
+/* Hero CTAs */
+.hero-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+.hero .cta-btn { padding: 15px 34px; }
+.hero .cta-btn.hero-secondary {
+    background: rgba(255,255,255,0.06);
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.6);
+}
+.hero .cta-btn.hero-secondary:hover {
+    background: var(--white);
+    color: var(--dark);
+    border-color: var(--white);
+}
+
+/* Hero reassurance badges */
+.hero-badges {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+.hero-badges li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: #f3ede3;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18);
+    padding: 8px 16px;
+    border-radius: 30px;
+    backdrop-filter: blur(2px);
+}
+.hero-badges .hero-badge-icon { font-size: 0.9rem; }
 
 /* ── Page Hero (inner pages) ── */
 .page-hero {
@@ -658,7 +719,14 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .hero { min-height: 90vh; padding: 70px 6%; }
     .hero h1 { font-size: 2.2rem; }
+    .hero p { font-size: 1.05rem; }
+    .hero .hero-support { font-size: 0.92rem; }
+    .hero-cta-row { flex-direction: column; align-items: stretch; }
+    .hero-cta-row .cta-btn { width: 100%; }
+    .hero-badges { gap: 8px; }
+    .hero-badges li { font-size: 0.78rem; padding: 7px 13px; }
     .nav-links { display: none; }
     .nav-links.open {
         display: flex;

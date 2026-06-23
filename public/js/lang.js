@@ -1,8 +1,8 @@
 const translations = {
     en: {
-        heroTitle: "International Filipino Household & Childcare Staffing You Can Trust",
-        heroSub: "International Filipino household and childcare staffing for families who require trust, quality, and discretion.",
-        heroCta: "Book Consultation",
+        heroTitle: "Trusted care for your home and family",
+        heroSub: "Private, consultation-led introductions to carefully selected Filipino nannies, housekeepers, chefs, and household staff for families who value trust, discretion, and long-term reliability.",
+        heroCta: "Request a Private Consultation",
         card1Title: "Professional Nannies",
         card1Desc: "English-speaking specialists focusing on child development, safety, and cultural education.",
         card2Title: "Private Chefs",
