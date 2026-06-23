@@ -22,6 +22,11 @@ const privateCvs = [
     reference: 'THC-MA-001',
     displayName: 'Mary Ann',
     role: 'Nanny / Housekeeper / Family Assistant',
+    // Photo approved for private-CV use only — never shown on public candidate
+    // cards or public candidate pages.
+    photoUrl: '/images/candidates/mary-ann-private.jpg',
+    photoAlt: 'Mary Ann, private household and childcare professional',
+    photoNote: 'Photo shared as part of Mary Ann’s private family profile.',
     introducedByNote:
       'This candidate profile is shared privately by Trusted Household & Childcare after consultation. Candidate contact details, full references, and direct introductions are coordinated only through Trusted Household & Childcare.',
     experienceSummary:

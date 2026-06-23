@@ -35,6 +35,13 @@
         </div>
         <% } %>
 
+        <% if (cv.photoUrl) { %>
+        <figure class="private-cv-photo">
+            <img src="<%= cv.photoUrl %>" alt="<%= cv.photoAlt %>">
+            <% if (cv.photoNote) { %><figcaption><%= cv.photoNote %></figcaption><% } %>
+        </figure>
+        <% } %>
+
         <div class="profile-section">
             <h2>Experience summary</h2>
             <p><%= cv.experienceSummary %></p>
