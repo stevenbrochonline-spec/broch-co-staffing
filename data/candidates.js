@@ -59,6 +59,48 @@ const candidates = [
     ctaLabel: 'Request CV access',
   },
   {
+    displayName: 'Adel',
+    slug: 'adel-ballena',
+    photoUrl: null,
+    photoAlt: 'Profile photo for Adel',
+    role: 'House Maid / Babysitter',
+    statusLabel: 'Available for consultation',
+    profileType: 'real_available',
+    nationality: 'Filipino',
+    availabilityRegion: 'Dubai / UAE families by arrangement',
+    yearsExperience: '9+ years in housekeeping and babysitting roles in Dubai',
+    languages: ['English', 'Tagalog'],
+    childcareExperience:
+      'Babysitting support for private families, including child supervision and practical day-to-day family assistance.',
+    householdExperience:
+      'Private household cleaning, deep cleaning, room sanitizing, mopping, vacuuming, dusting, laundry management, kitchen cleaning, surface care, and equipment handling including vacuums, carpet cleaners, and steamers.',
+    skills: [
+      'Babysitting support',
+      'Deep cleaning and maintenance',
+      'Laundry management',
+      'Kitchen cleaning',
+      'Surface care',
+      'Vacuum and steamer handling',
+      'Private household support',
+    ],
+    shortBio:
+      'Adel is a Filipino housemaid and babysitter with approximately 9 years of household and childcare support experience in Dubai, UAE. Her background includes supporting private families with cleaning, laundry, kitchen support, household maintenance, and babysitting duties.',
+    cvSummary:
+      'Her experience includes 2 years as a housemaid and babysitter with an Egyptian family in Dubai, plus 7 years of housemaid and babysitting experience in Dubai. Her skills include deep cleaning, maintenance, laundry management, kitchen cleaning, surface care, and household equipment operation.',
+    workHistorySummary:
+      'Adel has worked in Dubai as a housemaid and babysitter, including with an Egyptian family. Her responsibilities included household cleaning, room sanitizing, mopping, vacuuming, dusting, laundry, kitchen support, and practical household assistance.',
+    recommendationExcerpt:
+      'References and additional background details are available through Trusted Household & Childcare after consultation. Direct candidate contact details and private household information are withheld to protect candidate privacy and maintain a professional introduction process.',
+    trustNotes: [
+      'Profile prepared from candidate CV documentation',
+      'Direct phone, date of birth, visa status, and private identity details removed',
+      'Named employers and private households anonymized',
+      'References available through consultation where appropriate',
+      'Full CV access coordinated only through Trusted Household & Childcare',
+    ],
+    ctaLabel: 'Request CV access',
+  },
+  {
     displayName: 'Pia',
     slug: 'pia',
     photoUrl: null,
