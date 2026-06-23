@@ -72,6 +72,58 @@ const privateCvs = [
     referencesNote: 'References available by request',
     contactNote: 'All introductions are coordinated through Trusted Household & Childcare.',
   },
+  {
+    // Private CV profile for Adel — built from sanitized CV documentation.
+    // Direct phone, date of birth, visa status, marital status, and raw CV are not published.
+    token: 'cv-a91d4e8c2f70',
+    reference: 'THC-AB-001',
+    displayName: 'Adel',
+    role: 'House Maid / Babysitter',
+    photoUrl: '/images/candidates/adel-ballena-private.jpg',
+    photoAlt: 'Adel, private household and childcare support professional',
+    photoNote: 'Photo shared as part of Adel’s private family profile.',
+    introducedByNote:
+      'This candidate profile is shared privately by Trusted Household & Childcare after consultation. Candidate contact details, full references, and direct introductions are coordinated only through Trusted Household & Childcare.',
+    experienceSummary:
+      'Approximately 9 years of household and babysitting support experience in Dubai, UAE. Adel has worked as a housemaid and babysitter for private families, including 2 years with an Egyptian family in Dubai and 7 additional years in housemaid and babysitting roles in Dubai.',
+    skills: [
+      'Babysitting support',
+      'Deep cleaning and maintenance',
+      'Room sanitizing',
+      'Mopping, vacuuming, and dusting',
+      'Laundry management',
+      'Kitchen cleaning',
+      'Surface care',
+      'Vacuum, carpet cleaner, and steamer handling',
+    ],
+    languages: ['English', 'Tagalog'],
+    childcareHouseholdExperience:
+      'Childcare: babysitting support, child supervision, and practical family assistance. Household: room sanitizing, deep cleaning, mopping, vacuuming, dusting, furniture and floor care, window cleaning, grout cleaning, laundry management, kitchen cleaning, waste disposal, and household equipment operation.',
+    availabilityNotes: 'Dubai / UAE families by arrangement.',
+    experienceHighlights: [
+      'House Maid / Babysitter',
+      '2 years with an Egyptian family in Dubai, UAE',
+      '7 additional years as housemaid / babysitter in Dubai, UAE',
+      'Deep cleaning and home maintenance',
+      'Laundry and kitchen support',
+      'Surface care and household equipment handling',
+      'English and Tagalog speaking',
+    ],
+    personalNote: [
+      'Adel presents as a practical household and babysitting support candidate with long Dubai-based experience. Her profile is strongest for families needing reliable home cleaning, laundry, kitchen support, and general babysitting assistance.',
+      'Her CV emphasizes willingness to learn, household maintenance capability, and practical family support experience.',
+    ],
+    reasonForNewFamily:
+      'Adel is available for review by families seeking housemaid and babysitting support in Dubai / UAE by arrangement.',
+    nextSteps: [
+      'Confirm client household requirements',
+      'Review and accept the introduction agreement',
+      'Arrange a private interview or video call',
+      'Proceed only if both family and candidate agree',
+    ],
+    referencesNote: 'References available by request',
+    contactNote: 'All introductions are coordinated through Trusted Household & Childcare.',
+  },
 ];
 
 module.exports = privateCvs;
