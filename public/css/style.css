@@ -540,6 +540,11 @@ nav {
     padding: 40px 0;
     border-top: 1px solid var(--border);
 }
+.stats-row.stats-three {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 800px;
+    margin: 0 auto;
+}
 .stat { display: flex; flex-direction: column; }
 .stat-number {
     font-family: 'Playfair Display', serif;
@@ -746,6 +751,7 @@ footer {
     .about-grid,
     .contact-grid { grid-template-columns: 1fr; }
     .stats-row { grid-template-columns: repeat(2, 1fr); }
+    .stats-row.stats-three { grid-template-columns: 1fr; gap: 24px; }
     .form-row { grid-template-columns: 1fr; }
     .page-hero h1 { font-size: 2rem; }
     .profile-grid { grid-template-columns: 1fr; }
