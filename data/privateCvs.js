@@ -13,7 +13,8 @@ const privateCvs = [
   {
     // Sample entry — built only from already-public/safe profile information
     // (see data/candidates.js "mary-ann"). No private data is added here.
-    token: 'mary-ann-7f3a9c2e5b1d',
+    // Token is deliberately name-free so the URL does not reveal the candidate.
+    token: 'cv-7f3a9c2e5b1d',
     displayName: 'Mary Ann',
     role: 'Nanny / Housekeeper / Family Assistant',
     experienceSummary:
