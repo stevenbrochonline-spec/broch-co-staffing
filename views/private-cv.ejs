@@ -20,6 +20,7 @@
     <section class="page-hero">
         <h1><%= cv.displayName %></h1>
         <p><%= cv.role %></p>
+        <% if (cv.reference) { %><p class="private-cv-ref">Private profile reference: <%= cv.reference %></p><% } %>
     </section>
 
     <section class="candidate-profile">
@@ -27,10 +28,26 @@
             <p>This private profile is shared only after consultation and is intended for the recipient family. Please do not forward or publish this link. Candidate contact details and full references are coordinated privately through Trusted Household &amp; Childcare.</p>
         </div>
 
+        <% if (cv.introducedByNote) { %>
+        <div class="profile-section">
+            <h2>Introduced by Trusted Household &amp; Childcare</h2>
+            <p><%= cv.introducedByNote %></p>
+        </div>
+        <% } %>
+
         <div class="profile-section">
             <h2>Experience summary</h2>
             <p><%= cv.experienceSummary %></p>
         </div>
+
+        <% if (cv.experienceHighlights && cv.experienceHighlights.length) { %>
+        <div class="profile-section">
+            <h2>Experience highlights</h2>
+            <ul class="profile-list">
+                <% cv.experienceHighlights.forEach(function(h) { %><li><%= h %></li><% }); %>
+            </ul>
+        </div>
+        <% } %>
 
         <div class="profile-section">
             <h2>Childcare &amp; household experience</h2>
@@ -53,6 +70,29 @@
             <h2>Availability</h2>
             <p><%= cv.availabilityNotes %></p>
         </div>
+
+        <% if (cv.personalNote && cv.personalNote.length) { %>
+        <div class="profile-section">
+            <h2>Personal note</h2>
+            <% cv.personalNote.forEach(function(p) { %><p><%= p %></p><% }); %>
+        </div>
+        <% } %>
+
+        <% if (cv.reasonForNewFamily) { %>
+        <div class="profile-section">
+            <h2>Reason for considering a new family</h2>
+            <p><%= cv.reasonForNewFamily %></p>
+        </div>
+        <% } %>
+
+        <% if (cv.nextSteps && cv.nextSteps.length) { %>
+        <div class="profile-section">
+            <h2>Next steps</h2>
+            <ul class="profile-list">
+                <% cv.nextSteps.forEach(function(s) { %><li><%= s %></li><% }); %>
+            </ul>
+        </div>
+        <% } %>
 
         <div class="profile-section">
             <h2>References</h2>
