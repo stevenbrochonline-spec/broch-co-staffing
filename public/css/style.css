@@ -809,8 +809,30 @@ footer {
 /* ── Fee summary block (candidate shortlist) ── */
 .fee-summary-section {
     max-width: 1000px;
-    margin: 20px auto 0;
+    margin: 40px auto 0;
     padding: 0 5%;
+}
+.fee-summary-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--dark);
+    text-align: center;
+    margin-bottom: 10px;
+}
+.fee-summary-lead {
+    text-align: center;
+    color: var(--gray);
+    font-size: 0.95rem;
+    max-width: 760px;
+    margin: 0 auto 22px;
+}
+.fee-agreement {
+    text-align: center;
+    color: var(--gray);
+    font-size: 0.9rem;
+    font-style: italic;
+    max-width: 760px;
+    margin: 16px auto 0;
 }
 .fee-summary {
     list-style: none;
