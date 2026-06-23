@@ -64,23 +64,55 @@ a { text-decoration: none; color: inherit; }
     text-transform: uppercase;
     color: var(--gold);
 }
+/* Compact private-profile intro card: small premium photo beside the intro */
+.private-cv-intro {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.05);
+    padding: 24px 28px;
+    margin-bottom: 35px;
+}
+.private-cv-intro-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+.private-cv-intro-text p {
+    color: var(--gray);
+}
 .private-cv-photo {
-    margin: 0 0 35px;
+    margin: 0;
+    flex-shrink: 0;
     text-align: center;
 }
 .private-cv-photo img {
-    width: 100%;
-    max-width: 280px;
-    height: auto;
+    width: 130px;
+    height: 150px;
+    object-fit: cover;
     border-radius: 8px;
     border: 1px solid var(--border);
-    box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
 }
 .private-cv-photo figcaption {
-    margin-top: 10px;
-    font-size: 0.85rem;
+    margin-top: 8px;
+    max-width: 150px;
+    font-size: 0.72rem;
     font-style: italic;
     color: var(--gray);
+    line-height: 1.4;
+}
+@media (max-width: 640px) {
+    .private-cv-intro {
+        flex-direction: column;
+        text-align: center;
+        gap: 18px;
+    }
+    .private-cv-photo figcaption { max-width: none; }
 }
 
 /* ── Navigation ── */

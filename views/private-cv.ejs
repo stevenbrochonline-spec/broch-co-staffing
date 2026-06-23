@@ -28,18 +28,21 @@
             <p>This private profile is shared only after consultation and is intended for the recipient family. Please do not forward or publish this link. Candidate contact details and full references are coordinated privately through Trusted Household &amp; Childcare.</p>
         </div>
 
-        <% if (cv.introducedByNote) { %>
-        <div class="profile-section">
-            <h2>Introduced by Trusted Household &amp; Childcare</h2>
-            <p><%= cv.introducedByNote %></p>
+        <% if (cv.introducedByNote || cv.photoUrl) { %>
+        <div class="private-cv-intro">
+            <% if (cv.photoUrl) { %>
+            <figure class="private-cv-photo">
+                <img src="<%= cv.photoUrl %>" alt="<%= cv.photoAlt %>">
+                <% if (cv.photoNote) { %><figcaption><%= cv.photoNote %></figcaption><% } %>
+            </figure>
+            <% } %>
+            <% if (cv.introducedByNote) { %>
+            <div class="private-cv-intro-text">
+                <h2>Introduced by Trusted Household &amp; Childcare</h2>
+                <p><%= cv.introducedByNote %></p>
+            </div>
+            <% } %>
         </div>
-        <% } %>
-
-        <% if (cv.photoUrl) { %>
-        <figure class="private-cv-photo">
-            <img src="<%= cv.photoUrl %>" alt="<%= cv.photoAlt %>">
-            <% if (cv.photoNote) { %><figcaption><%= cv.photoNote %></figcaption><% } %>
-        </figure>
         <% } %>
 
         <div class="profile-section">
