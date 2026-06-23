@@ -54,4 +54,9 @@ router.get('/private-cv/:token', (req, res) => {
   res.render('private-cv', { cv });
 });
 
+
+router.get('/agreement', (req, res) => {
+    res.render('agreement');
+});
+
 module.exports = router;
