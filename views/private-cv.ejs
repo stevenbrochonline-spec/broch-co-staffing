@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Private profile: never index or follow. Shared only via a private link. -->
+    <meta name="robots" content="noindex, nofollow">
+    <title>Private Profile — <%= cv.displayName %> | Trusted Household &amp; Childcare</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Standalone private page: intentionally no public navigation or footer,
+         so private CV pages are never linked from public site chrome. -->
+    <header class="private-cv-bar">
+        <span class="logo">Trusted Household &amp; Childcare</span>
+        <span class="private-cv-tag">Private profile</span>
+    </header>
+
+    <section class="page-hero">
+        <h1><%= cv.displayName %></h1>
+        <p><%= cv.role %></p>
+    </section>
+
+    <section class="candidate-profile">
+        <div class="protection-note">
+            <p>This private profile is shared only after consultation and is intended for the recipient family. Please do not forward or publish this link. Candidate contact details and full references are coordinated privately through Trusted Household &amp; Childcare.</p>
+        </div>
+
+        <div class="profile-section">
+            <h2>Experience summary</h2>
+            <p><%= cv.experienceSummary %></p>
+        </div>
+
+        <div class="profile-section">
+            <h2>Childcare &amp; household experience</h2>
+            <p><%= cv.childcareHouseholdExperience %></p>
+        </div>
+
+        <div class="profile-section">
+            <h2>Skills</h2>
+            <div class="skill-tags">
+                <% cv.skills.forEach(function(s) { %><span class="tag"><%= s %></span><% }); %>
+            </div>
+        </div>
+
+        <div class="profile-section">
+            <h2>Languages</h2>
+            <p><%= cv.languages.join(', ') %></p>
+        </div>
+
+        <div class="profile-section">
+            <h2>Availability</h2>
+            <p><%= cv.availabilityNotes %></p>
+        </div>
+
+        <div class="profile-section">
+            <h2>References</h2>
+            <p><%= cv.referencesNote %></p>
+        </div>
+
+        <div class="protection-note">
+            <p><%= cv.contactNote %></p>
+        </div>
+    </section>
+</body>
+</html>
