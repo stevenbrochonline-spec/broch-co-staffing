@@ -1515,3 +1515,16 @@ footer {
         padding: 24px 18px;
     }
 }
+
+/* ── Mobile menu click/stacking fix ── */
+@media (max-width: 768px) {
+    .hamburger {
+        position: relative;
+        z-index: 2001;
+        pointer-events: auto;
+    }
+
+    .nav-links.open {
+        z-index: 2000;
+    }
+}
