@@ -413,7 +413,11 @@ nav {
     background: var(--white);
     padding: 70px 5% 60px;
 }
-.consult-promise .section-title { margin-bottom: 12px; }
+.consult-promise .section-title { margin-bottom: 14px; }
+/* The shared .section-sub uses a negative top margin tuned for a 50px title
+   gap; inside .consult-promise the title gap is small, so neutralize it here to
+   prevent the heading and subtitle overlapping (desktop and mobile). */
+.consult-promise .section-sub { margin-top: 0; }
 .how-trust-grid.consult-steps {
     grid-template-columns: repeat(3, 1fr);
     max-width: 980px;
