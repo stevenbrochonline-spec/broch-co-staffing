@@ -1528,3 +1528,57 @@ footer {
         z-index: 2000;
     }
 }
+
+/* ── Introduction Agreement ── */
+.agreement-section {
+    padding: 70px 5%;
+    background: var(--light);
+}
+
+.agreement-card {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+    padding: 44px;
+}
+
+.agreement-card h2,
+.agreement-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--dark);
+}
+
+.agreement-card h2 {
+    font-size: 2rem;
+    margin-bottom: 22px;
+}
+
+.agreement-card h3 {
+    font-size: 1.25rem;
+    margin: 28px 0 10px;
+}
+
+.agreement-card p {
+    color: var(--gray);
+    margin-bottom: 12px;
+}
+
+.agreement-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 34px;
+}
+
+@media (max-width: 768px) {
+    .agreement-card {
+        padding: 28px 20px;
+    }
+
+    .agreement-actions .cta-btn {
+        width: 100%;
+    }
+}
