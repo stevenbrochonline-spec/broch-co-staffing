@@ -805,6 +805,53 @@ footer {
 .protection-note p + p {
     margin-top: 12px;
 }
+
+/* ── Fee summary block (candidate shortlist) ── */
+.fee-summary-section {
+    max-width: 1000px;
+    margin: 20px auto 0;
+    padding: 0 5%;
+}
+.fee-summary {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+}
+.fee-summary li {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 14px 24px;
+    border-bottom: 1px solid var(--border);
+}
+.fee-summary li:last-child { border-bottom: none; }
+.fee-summary .fee-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--dark);
+    white-space: nowrap;
+    flex-shrink: 0;
+    min-width: 110px;
+}
+.fee-summary .fee-label {
+    color: var(--gray);
+    font-size: 0.92rem;
+    text-align: right;
+}
+.fee-summary .fee-total {
+    background: #f7f3ea;
+    border-top: 2px solid var(--gold);
+}
+.fee-summary .fee-total .fee-amount { color: var(--gold); }
+.fee-summary .fee-total .fee-label {
+    color: var(--dark);
+    font-weight: 600;
+}
 .protection-note.inline {
     margin: 30px 0 0;
 }
