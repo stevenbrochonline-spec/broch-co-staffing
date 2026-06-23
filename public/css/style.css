@@ -1406,3 +1406,112 @@ footer {
     color: var(--gold);
     font-weight: 700;
 }
+
+/* ── Final mobile layout guard ──
+   Keep mobile pages within viewport. This sits at the end so it overrides
+   desktop grid rules defined later in the stylesheet. */
+@media (max-width: 768px) {
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    nav {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .page-hero,
+    .candidate-profile,
+    .about-content,
+    .services-preview,
+    .shortlist-section,
+    .how-trust,
+    .why-families,
+    .why-us,
+    .trust-lead,
+    .compliance,
+    .cta-section,
+    footer {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .profile-grid,
+    .about-grid,
+    .contact-grid,
+    .why-grid,
+    .trust-lead-inner,
+    .shortlist-inner {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 100%;
+        gap: 28px;
+    }
+
+    .profile-side,
+    .profile-main,
+    .trust-lead-card,
+    .trust-lead-text,
+    .why-text,
+    .why-image {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .profile-side {
+        position: static;
+        top: auto;
+    }
+
+    .why-image {
+        height: 260px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+
+    .section-sub {
+        margin: 0 auto 32px;
+        padding: 0 12px;
+    }
+
+    .whatsapp-float {
+        right: 18px;
+        bottom: 18px;
+        width: 54px;
+        height: 54px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1rem;
+        letter-spacing: 0;
+    }
+
+    nav {
+        padding: 18px 5%;
+    }
+
+    .page-hero,
+    .candidate-profile {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .profile-side {
+        padding: 24px 18px;
+    }
+}
