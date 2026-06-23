@@ -1,10 +1,15 @@
 <!-- Trust / expertise lead section. The WhatsApp number is a company/business
      contact route (Diana Rose is the company's sourcing lead), never candidate contact.
-     No photo or private personal data is referenced here. -->
+     Diana's approved photo is shown only where the including page passes
+     `dianaPhoto` (currently the About page). Other pages default to initials. -->
 <section class="trust-lead">
     <div class="trust-lead-inner">
         <div class="trust-lead-card">
+            <% if (typeof dianaPhoto !== 'undefined' && dianaPhoto) { %>
+            <img class="trust-photo" src="<%= dianaPhoto %>" alt="Diana Rose, Sourcing and Family Support Lead">
+            <% } else { %>
             <div class="trust-avatar" aria-hidden="true">DR</div>
+            <% } %>
             <h3>Diana Rose</h3>
             <p class="trust-role">Sourcing &amp; Family Support Lead</p>
             <a href="https://wa.me/971557862523" class="cta-btn" target="_blank" rel="noopener">Chat with Diana Rose on WhatsApp</a>
