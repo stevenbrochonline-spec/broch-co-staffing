@@ -56,6 +56,14 @@ a { text-decoration: none; color: inherit; }
     padding: 5px 12px;
     border-radius: 20px;
 }
+.private-cv-ref {
+    margin-top: 14px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--gold);
+}
 
 /* ── Navigation ── */
 nav {
