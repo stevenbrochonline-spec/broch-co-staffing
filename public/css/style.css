@@ -802,6 +802,9 @@ footer {
     font-size: 0.95rem;
     margin: 0;
 }
+.protection-note p + p {
+    margin-top: 12px;
+}
 .protection-note.inline {
     margin: 30px 0 0;
 }
