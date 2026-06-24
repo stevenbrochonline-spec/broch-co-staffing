@@ -1582,39 +1582,62 @@ footer {
         width: 100%;
     }
 .faq-section {
-    padding: 80px 8%;
-    background: #f8f5ef;
+    padding: 90px 8%;
+    background: var(--light);
 }
 
 .faq-section h2 {
     font-family: 'Playfair Display', serif;
     font-size: 2.4rem;
     text-align: center;
-    margin-bottom: 40px;
-    color: #1c1c1c;
+    margin: 0 auto 44px;
+    color: var(--dark);
+}
+
+.faq-section h3,
+.faq-section p {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .faq-section h3 {
-    max-width: 900px;
-    margin: 26px auto 10px;
-    font-size: 1.25rem;
-    color: #1c1c1c;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-bottom: none;
+    padding: 24px 28px 8px;
+    margin-top: 18px;
+    font-size: 1.2rem;
+    color: var(--dark);
+    border-radius: 12px 12px 0 0;
 }
 
 .faq-section p {
-    max-width: 900px;
-    margin: 0 auto;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: none;
+    padding: 0 28px 24px;
+    margin-bottom: 18px;
     font-size: 1rem;
     line-height: 1.7;
-    color: #555;
+    color: var(--gray);
+    border-radius: 0 0 12px 12px;
 }
 
 @media (max-width: 768px) {
     .faq-section {
-        padding: 55px 24px;
+        padding: 60px 20px;
     }
 
     .faq-section h2 {
         font-size: 2rem;
+    }
+
+    .faq-section h3 {
+        padding: 20px 20px 8px;
+    }
+
+    .faq-section p {
+        padding: 0 20px 20px;
     }
 }
