@@ -23,6 +23,10 @@ router.get('/nanny-in-dubai', (req, res) => {
   res.render('nanny-in-dubai');
 });
 
+router.get('/nanny-cost-dubai', (req, res) => {
+  res.render('nanny-cost-dubai');
+});
+
 router.get('/babysitter-in-dubai', (req, res) => {
   res.render('babysitter-in-dubai');
 });
