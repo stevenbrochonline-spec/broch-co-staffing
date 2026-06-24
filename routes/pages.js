@@ -31,6 +31,10 @@ router.get('/babysitter-in-dubai', (req, res) => {
   res.render('babysitter-in-dubai');
 });
 
+router.get('/babysitter-vs-nanny-dubai', (req, res) => {
+  res.render('babysitter-vs-nanny-dubai');
+});
+
 router.get('/housekeeper-in-dubai', (req, res) => {
   res.render('housekeeper-in-dubai');
 });
