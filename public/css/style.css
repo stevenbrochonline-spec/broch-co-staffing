@@ -1774,3 +1774,460 @@ footer {
         margin: -6px 20px 24px;
     }
 }
+
+/* ── SEO Landing: Nanny in Dubai ── */
+.nanny-hero {
+    position: relative;
+    padding: 110px 5% 100px;
+    color: var(--white);
+    text-align: center;
+    background:
+        linear-gradient(rgba(26,20,14,0.68), rgba(26,20,14,0.86)),
+        radial-gradient(90% 80% at 50% 0%, rgba(197,160,89,0.18), rgba(26,20,14,0) 62%),
+        url('/images/hero-family-home-care.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.nanny-hero-inner {
+    max-width: 840px;
+    margin: 0 auto;
+}
+
+.nanny-kicker,
+.nanny-section-label {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+}
+
+.nanny-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    line-height: 1.08;
+    margin-bottom: 22px;
+    text-shadow: 0 2px 24px rgba(0,0,0,0.38);
+}
+
+.nanny-hero p {
+    max-width: 720px;
+    margin: 0 auto 32px;
+    color: #f3ede3;
+    font-size: 1.16rem;
+    font-weight: 300;
+    line-height: 1.75;
+}
+
+.nanny-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+.nanny-hero .cta-btn.secondary {
+    background: rgba(255,255,255,0.08);
+    color: var(--white);
+    border-color: rgba(255,255,255,0.68);
+}
+
+.nanny-hero .cta-btn.secondary:hover {
+    background: var(--white);
+    color: var(--dark);
+    border-color: var(--white);
+}
+
+.nanny-landing {
+    background: var(--light);
+}
+
+.nanny-intro,
+.nanny-content-grid,
+.nanny-process,
+.nanny-faq,
+.nanny-cta {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.nanny-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+    gap: 42px;
+    align-items: start;
+    padding-top: 84px;
+    padding-bottom: 58px;
+}
+
+.nanny-intro-copy h2,
+.nanny-content-card h2,
+.nanny-process-heading h2,
+.nanny-faq-heading h2,
+.nanny-cta h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--dark);
+}
+
+.nanny-intro-copy h2 {
+    font-size: 2.35rem;
+    line-height: 1.15;
+    margin-bottom: 22px;
+}
+
+.nanny-intro-copy p,
+.nanny-content-card p,
+.nanny-step p,
+.nanny-faq-item p,
+.nanny-cta p {
+    color: var(--gray);
+    line-height: 1.78;
+}
+
+.nanny-intro-copy p,
+.nanny-content-card p {
+    margin-bottom: 18px;
+}
+
+.nanny-intro-copy a,
+.nanny-content-card a {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.nanny-intro-copy a:hover,
+.nanny-content-card a:hover {
+    text-decoration: underline;
+}
+
+.nanny-intro-card {
+    position: sticky;
+    top: 110px;
+    background:
+        linear-gradient(145deg, rgba(255,255,255,0.96), rgba(247,243,234,0.96));
+    border: 1px solid #eadfcb;
+    border-radius: 6px;
+    box-shadow: 0 18px 46px rgba(26,26,26,0.08);
+    padding: 34px 30px;
+}
+
+.nanny-intro-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    margin-bottom: 20px;
+    color: var(--dark);
+}
+
+.nanny-intro-card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nanny-intro-card li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 13px;
+    color: var(--gray);
+    font-size: 0.94rem;
+    line-height: 1.55;
+}
+
+.nanny-intro-card li::before {
+    content: '\2713';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--gold);
+    font-weight: 700;
+}
+
+.nanny-content-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+    padding-top: 28px;
+    padding-bottom: 76px;
+}
+
+.nanny-content-card {
+    background: var(--white);
+    border: 1px solid #eadfcb;
+    border-radius: 6px;
+    box-shadow: 0 12px 34px rgba(26,26,26,0.06);
+    padding: 34px;
+}
+
+.nanny-card-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--dark);
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+}
+
+.nanny-content-card h2 {
+    font-size: 1.55rem;
+    margin-bottom: 16px;
+}
+
+.nanny-process {
+    padding-top: 78px;
+    padding-bottom: 82px;
+    background:
+        radial-gradient(circle at top right, rgba(197,160,89,0.14), rgba(197,160,89,0) 36%),
+        #fff;
+    border-top: 1px solid #eadfcb;
+    border-bottom: 1px solid #eadfcb;
+}
+
+.nanny-process-heading {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 42px;
+}
+
+.nanny-process-heading h2,
+.nanny-faq-heading h2,
+.nanny-cta h2 {
+    font-size: 2.2rem;
+    line-height: 1.18;
+}
+
+.nanny-process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.nanny-step {
+    text-align: center;
+}
+
+.nanny-step span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--dark);
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    margin-bottom: 18px;
+}
+
+.nanny-step h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--dark);
+    margin-bottom: 8px;
+}
+
+.nanny-step p {
+    font-size: 0.91rem;
+}
+
+.nanny-faq {
+    display: grid;
+    grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.2fr);
+    gap: 42px;
+    align-items: start;
+    padding-top: 86px;
+    padding-bottom: 72px;
+}
+
+.nanny-faq-heading {
+    background: var(--white);
+    border: 1px solid #eadfcb;
+    border-radius: 6px;
+    box-shadow: 0 16px 40px rgba(26,26,26,0.07);
+    padding: 34px;
+}
+
+.nanny-faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.nanny-faq-item {
+    background: var(--white);
+    border: 1px solid #eadfcb;
+    border-radius: 6px;
+    box-shadow: 0 12px 32px rgba(26,26,26,0.055);
+    overflow: hidden;
+}
+
+.nanny-faq-item[open] {
+    border-color: rgba(197,160,89,0.72);
+}
+
+.nanny-faq-item summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 22px 26px;
+    cursor: pointer;
+    color: var(--dark);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.12rem;
+    line-height: 1.35;
+    list-style: none;
+}
+
+.nanny-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.nanny-faq-item summary::marker {
+    content: '';
+}
+
+.nanny-faq-item summary::after {
+    content: '+';
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--dark);
+    color: var(--gold);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.nanny-faq-item[open] summary::after {
+    content: '\2212';
+    background: var(--gold);
+    color: var(--white);
+}
+
+.nanny-faq-item summary:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: -4px;
+}
+
+.nanny-faq-item p {
+    margin: -6px 26px 24px;
+    padding-top: 18px;
+    border-top: 1px solid #efe6d5;
+    font-size: 0.96rem;
+}
+
+.nanny-cta {
+    text-align: center;
+    padding-top: 76px;
+    padding-bottom: 88px;
+}
+
+.nanny-cta p {
+    max-width: 680px;
+    margin: 18px auto 30px;
+}
+
+@media (max-width: 980px) {
+    .nanny-process-steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nanny-hero {
+        padding: 82px 5% 76px;
+    }
+
+    .nanny-hero h1 {
+        font-size: 2.55rem;
+    }
+
+    .nanny-hero p {
+        font-size: 1.02rem;
+    }
+
+    .nanny-hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nanny-intro,
+    .nanny-content-grid,
+    .nanny-faq {
+        grid-template-columns: 1fr;
+    }
+
+    .nanny-intro {
+        padding-top: 64px;
+        padding-bottom: 40px;
+    }
+
+    .nanny-intro-copy h2,
+    .nanny-process-heading h2,
+    .nanny-faq-heading h2,
+    .nanny-cta h2 {
+        font-size: 1.9rem;
+    }
+
+    .nanny-intro-card {
+        position: static;
+        padding: 28px 24px;
+    }
+
+    .nanny-content-grid {
+        padding-bottom: 58px;
+    }
+
+    .nanny-content-card {
+        padding: 28px 24px;
+    }
+
+    .nanny-process {
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+
+    .nanny-process-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .nanny-faq {
+        gap: 24px;
+        padding-top: 64px;
+        padding-bottom: 56px;
+    }
+
+    .nanny-faq-heading {
+        padding: 28px 24px;
+        text-align: center;
+    }
+
+    .nanny-faq-item summary {
+        padding: 20px;
+        font-size: 1.05rem;
+    }
+
+    .nanny-faq-item p {
+        margin: -6px 20px 22px;
+    }
+
+    .nanny-cta {
+        padding-top: 58px;
+        padding-bottom: 70px;
+    }
+}
