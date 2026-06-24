@@ -19,6 +19,10 @@ router.get('/services', (req, res) => {
   res.render('services');
 });
 
+router.get('/nanny-in-dubai', (req, res) => {
+  res.render('nanny-in-dubai');
+});
+
 router.get('/contact', (req, res) => {
   res.render('contact');
 });
