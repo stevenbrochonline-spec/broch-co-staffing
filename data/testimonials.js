@@ -23,10 +23,16 @@ const testimonials = [
     attribution: 'Family office client, UAE',
   },
   // Published with the client's explicit written permission to use her full name.
+  // `featured` promotes this entry into the featured section on the testimonials
+  // page. `photo` reserves space for Olga's real portrait — set it to the image
+  // path (e.g. '/images/team/olga-fler.jpg') once the approved photo is added to
+  // public/images; until then a placeholder monogram is shown (no broken image).
   {
     quote:
       'Finding the right nanny changed our family life. From the very beginning, we felt supported throughout the entire process, and we were introduced to someone who has become an invaluable part of our home. Today, after two years together, she is more than a nanny—she feels like part of our family. The trust, professionalism, and genuine care she brings every day have given us complete peace of mind. I am happy for my name and this testimonial to be published because our experience has been truly exceptional.',
     attribution: 'Olga Fler',
+    featured: true,
+    photo: null,
   },
 ];
 
