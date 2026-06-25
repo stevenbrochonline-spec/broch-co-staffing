@@ -7,19 +7,96 @@
 <body>
     <%- include('partials/nav') %>
 
-    <section class="page-hero">
-        <h1>Contact Us</h1>
-        <p>Tell us about your family and we&rsquo;ll prepare a private, considered shortlist &mdash; warmly and without pressure.</p>
+    <!-- 1. Premium Contact Hero -->
+    <section class="contact-hero">
+        <div class="contact-hero-inner">
+            <div class="contact-hero-floral" aria-hidden="true">
+                <svg viewBox="0 0 120 200" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M60 196V40"></path>
+                    <path d="M60 70c0-16 14-28 34-28-2 18-16 30-34 30"></path>
+                    <path d="M60 108c0-16-14-28-34-28 2 18 16 30 34 30"></path>
+                    <path d="M60 146c0-16 14-28 34-28-2 18-16 30-34 30"></path>
+                    <path d="M60 40a14 14 0 0 1 14-14 14 14 0 0 1-14 18 14 14 0 0 1-14-18 14 14 0 0 1 14 14Z"></path>
+                </svg>
+            </div>
+            <div class="contact-hero-text">
+                <span class="eyebrow">Get in Touch</span>
+                <h1>Contact Us</h1>
+                <p>Tell us about your family and we&rsquo;ll prepare a private, carefully considered shortlist &mdash; warmly and without pressure.</p>
+                <ul class="contact-trust">
+                    <li><span class="ct-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="1.5"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></span> Private &amp; Discreet</li>
+                    <li><span class="ct-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></span> By Invitation Only</li>
+                    <li><span class="ct-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 5l8 6.5"></path><path d="M6 10.5V19h12v-8.5"></path><path d="M10 19v-4h4v4"></path></svg></span> Family Focused</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
-    <%- include('partials/consultation-promise') %>
-
-    <section class="cta-row-section">
-        <a href="/book" class="cta-btn">Request a private consultation</a>
-        <a href="/candidates" class="cta-btn secondary">View candidate shortlist</a>
+    <!-- 2. Premium Contact Methods -->
+    <section class="contact-methods">
+        <h2 class="section-title">Choose your preferred way to reach us</h2>
+        <div class="contact-method-grid">
+            <a class="contact-method" href="https://wa.me/971557862523?text=Dear%20Diana%2C%0A%0AI%20am%20interested%20in%20nanny%20support%20through%20Trusted%20Household%20Care.%0A%0AMy%20city%20is%3A%0AI%20am%20looking%20for%3A%20live-in%20%2F%20live-out%20support%0A%0APlease%20call%20me%20back%20to%20discuss%20my%20needs.%0A%0AThank%20you." target="_blank" rel="noopener">
+                <span class="cm-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H9l-4 3v-3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"></path></svg></span>
+                <h3>Chat on WhatsApp</h3>
+                <p>Get a quick response</p>
+            </a>
+            <a class="contact-method" href="mailto:info@globalsunrise.solutions">
+                <span class="cm-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></span>
+                <h3>Email Us</h3>
+                <p>We typically reply within 24 hours</p>
+            </a>
+            <a class="contact-method" href="/book">
+                <span class="cm-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"></rect><path d="M4 9h16M8 3v4M16 3v4"></path></svg></span>
+                <h3>Book a Consultation</h3>
+                <p>Schedule a convenient time</p>
+            </a>
+        </div>
+        <p class="contact-confidential"><span aria-hidden="true">&#128274;</span> Your information is kept confidential.</p>
     </section>
 
+    <!-- 3. How Our Consultation Works -->
+    <section class="contact-process">
+        <h2 class="section-title">How Our Consultation Works</h2>
+        <div class="contact-process-grid">
+            <div class="contact-process-card">
+                <span class="cp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H9l-4 3v-3a1 1 0 0 1-1-1Z"></path><path d="M19 9h1a2 2 0 0 1 2 2v5a1 1 0 0 1-1 1v3l-4-3h-3"></path></svg></span>
+                <h3>We Understand Your Family</h3>
+                <p>We begin with a personal conversation about your household, lifestyle and expectations.</p>
+            </div>
+            <div class="contact-process-card">
+                <span class="cp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"></circle><path d="m20 20-3.4-3.4"></path><path d="m8.6 11 1.7 1.7 3.1-3.4"></path></svg></span>
+                <h3>Private Candidate Selection</h3>
+                <p>We carefully review and shortlist suitable candidates specifically for your family.</p>
+            </div>
+            <div class="contact-process-card">
+                <span class="cp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l3 3v15H6z"></path><path d="M15 3v4h3"></path><path d="M9 12h6M9 16h6"></path></svg></span>
+                <h3>Introductions &amp; References</h3>
+                <p>Candidate introductions and references are shared privately after consultation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Diana Trust Card -->
+    <section class="contact-diana">
+        <div class="contact-diana-inner">
+            <div class="cd-portrait-wrap">
+                <img class="cd-portrait" src="/images/team/diana-rose.jpeg" alt="Diana Rose, Sourcing and Family Support Lead" width="899" height="1599" loading="lazy" decoding="async">
+            </div>
+            <div class="cd-text">
+                <p>Every introduction is personally overseen by Diana Rose, ensuring the highest standards of care, discretion and professionalism.</p>
+                <p class="cd-phone"><span class="cd-phone-label">Direct line</span><a href="tel:+971557862523">+971 55 786 2523</a></p>
+            </div>
+            <div class="cd-cta">
+                <a href="https://wa.me/971557862523?text=Dear%20Diana%2C%0A%0AI%20am%20interested%20in%20nanny%20support%20through%20Trusted%20Household%20Care.%0A%0AMy%20city%20is%3A%0AI%20am%20looking%20for%3A%20live-in%20%2F%20live-out%20support%0A%0APlease%20call%20me%20back%20to%20discuss%20my%20needs.%0A%0AThank%20you." class="cta-btn" target="_blank" rel="noopener">Start the Conversation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Existing Contact Form (secondary option for visitors who prefer email) -->
     <section class="contact-section">
+        <h2 class="section-title">Prefer to write to us?</h2>
+        <p class="section-sub">Send a message below and we&rsquo;ll be in touch. The fastest replies are via WhatsApp or a booked consultation above.</p>
         <div class="contact-grid">
             <div class="contact-info">
                 <h3>International Coverage</h3>
