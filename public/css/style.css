@@ -1320,6 +1320,186 @@ footer {
     font-size: 0.9rem;
 }
 
+/* ── Testimonials: premium redesign ── */
+/* Gold five-star rating (featured + grid cards) */
+.stars {
+    color: var(--gold);
+    font-size: 1.05rem;
+    letter-spacing: 3px;
+    line-height: 1;
+    margin-bottom: 16px;
+}
+
+/* Featured testimonial (Olga Fler) */
+.featured-testimonial {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 5% 20px;
+}
+.featured-inner {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 48px;
+    align-items: center;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--gold);
+    border-radius: 6px;
+    box-shadow: 0 18px 50px rgba(0,0,0,0.06);
+    padding: 48px;
+}
+.featured-portrait-wrap { display: flex; justify-content: center; }
+/* Fixed 4:5 box reserves the exact space of the real portrait, so dropping the
+   image in later (set `photo` in data/testimonials.js) causes no layout shift. */
+.featured-portrait {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.featured-portrait-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(160deg, #f4ece0, #ffffff);
+    border: 1px solid var(--border);
+}
+.featured-monogram {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.4rem;
+    color: var(--gold);
+    letter-spacing: 2px;
+}
+.featured-content { margin: 0; }
+.featured-quote-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    line-height: 0.6;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 8px;
+}
+.featured-quote {
+    font-size: 1.25rem;
+    line-height: 1.75;
+    color: var(--dark);
+    font-weight: 300;
+    margin: 0 0 20px;
+}
+.featured-attribution {
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 24px;
+}
+.trust-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.trust-highlights li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    color: var(--dark);
+    background: var(--light);
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    padding: 8px 16px;
+}
+.trust-check { color: var(--gold); font-weight: 700; }
+
+/* Premium trust metrics band */
+.trust-metrics {
+    background: var(--light);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 48px 5%;
+    margin-top: 24px;
+}
+.trust-metrics-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+}
+.metric {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.metric-value {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 1.5rem;
+    line-height: 1.1;
+}
+.metric-label {
+    color: var(--gray);
+    font-size: 0.82rem;
+    line-height: 1.4;
+}
+
+/* Elegant decorative quote mark on grid cards */
+.testimonial-card blockquote::before {
+    content: '\201C';
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 2.4rem;
+    line-height: 0;
+    position: relative;
+    top: 0.5rem;
+    margin-right: 4px;
+}
+
+/* Highlighted references info box */
+.references-box {
+    margin-top: 40px;
+    background: #faf6ee;
+    border: 1px solid #ecdfc4;
+    border-left: 4px solid var(--gold);
+    border-radius: 6px;
+    padding: 28px 32px;
+}
+.references-box h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--dark);
+    font-size: 1.25rem;
+    margin: 0 0 10px;
+}
+.references-box p {
+    color: var(--gray);
+    font-size: 0.98rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Responsive — testimonials premium */
+@media (max-width: 900px) {
+    .trust-metrics-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+    .featured-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 32px 22px;
+        text-align: center;
+    }
+    .featured-portrait { max-width: 240px; }
+    .featured-quote-mark { margin-left: auto; margin-right: auto; }
+    .trust-highlights { justify-content: center; }
+    .trust-metrics-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .references-box { padding: 24px 20px; }
+}
+
 /* ── Floating WhatsApp button (company contact) ── */
 .whatsapp-float {
     position: fixed;

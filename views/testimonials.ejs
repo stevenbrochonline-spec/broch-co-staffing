@@ -12,16 +12,70 @@
         <p>What families say about our private, personal approach to household and childcare introductions.</p>
     </section>
 
+    <%
+      // Split the featured testimonial (Olga Fler) from the rest. Falls back to
+      // showing every testimonial in the grid if none is marked featured.
+      var featured = testimonials.find(function (t) { return t.featured; });
+      var others = testimonials.filter(function (t) { return !t.featured; });
+    %>
+
+    <% if (featured) { %>
+    <section class="featured-testimonial">
+        <div class="featured-inner">
+            <div class="featured-portrait-wrap">
+                <% if (featured.photo) { %>
+                <img class="featured-portrait" src="<%= featured.photo %>" width="320" height="400" loading="lazy" decoding="async" alt="Portrait of <%= featured.attribution %>">
+                <% } else { %>
+                <%# Reserved portrait slot — same dimensions as the real image so swapping it in causes no layout shift. Set `photo` in data/testimonials.js to show the real portrait; no template change needed. %>
+                <% var initials = (featured.attribution || '').split(/\s+/).map(function (w) { return w.charAt(0); }).join('').slice(0, 2).toUpperCase(); %>
+                <div class="featured-portrait featured-portrait-placeholder" role="img" aria-label="Portrait of <%= featured.attribution %> coming soon">
+                    <span class="featured-monogram" aria-hidden="true"><%= initials %></span>
+                </div>
+                <% } %>
+            </div>
+            <figure class="featured-content">
+                <div class="stars" role="img" aria-label="Rated 5 out of 5 stars"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+                <span class="featured-quote-mark" aria-hidden="true">&ldquo;</span>
+                <blockquote class="featured-quote"><%= featured.quote %></blockquote>
+                <figcaption class="featured-attribution"><%= featured.attribution %></figcaption>
+                <ul class="trust-highlights">
+                    <li><span class="trust-check" aria-hidden="true">&#10003;</span> Together for 2 years</li>
+                    <li><span class="trust-check" aria-hidden="true">&#10003;</span> Nanny became part of our family</li>
+                    <li><span class="trust-check" aria-hidden="true">&#10003;</span> Published with explicit client consent</li>
+                </ul>
+            </figure>
+        </div>
+    </section>
+    <% } %>
+
+    <section class="trust-metrics" aria-label="Why families trust us">
+        <div class="trust-metrics-grid">
+            <div class="metric"><span class="metric-value">25+</span><span class="metric-label">Years Experience</span></div>
+            <div class="metric"><span class="metric-value">Hundreds</span><span class="metric-label">of Successful Placements</span></div>
+            <div class="metric"><span class="metric-value">Global</span><span class="metric-label">International Expertise</span></div>
+            <div class="metric"><span class="metric-value">Verified</span><span class="metric-label">Candidate References</span></div>
+            <div class="metric"><span class="metric-value">On Request</span><span class="metric-label">Additional Client References Available</span></div>
+            <div class="metric"><span class="metric-value">Ongoing</span><span class="metric-label">Support</span></div>
+        </div>
+    </section>
+
     <section class="testimonials-section">
         <div class="testimonial-grid">
-            <% testimonials.forEach(function(t) { %>
+            <% others.forEach(function(t) { %>
             <figure class="testimonial-card">
-                <blockquote>&ldquo;<%= t.quote %>&rdquo;</blockquote>
+                <div class="stars" role="img" aria-label="Rated 5 out of 5 stars"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+                <blockquote><%= t.quote %></blockquote>
                 <figcaption><%= t.attribution %></figcaption>
             </figure>
             <% }); %>
         </div>
-        <p class="muted center">Most testimonials are shared anonymously to protect our clients&rsquo; privacy.</p>
+
+        <aside class="references-box">
+            <h2>Additional references available on request</h2>
+            <p>For serious prospective clients, we are glad to provide additional client references and recommendation letters during the consultation process, so you can proceed with complete confidence.</p>
+        </aside>
+
+        <p class="muted center">To protect our clients&rsquo; privacy, most testimonials are shared anonymously. Additional client references and recommendation letters are available upon request.</p>
     </section>
 
     <section class="cta-section">
