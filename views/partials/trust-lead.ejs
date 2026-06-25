@@ -1,15 +1,12 @@
 <!-- Trust / expertise lead section. The WhatsApp number is a company/business
      contact route (Diana Rose is the company's sourcing lead), never candidate contact.
-     Diana's approved photo is shown only where the including page passes
-     `dianaPhoto` (currently the About page). Other pages default to initials. -->
+     Diana's approved photo is shown on every page that includes this section. A page
+     may override the image by passing `dianaPhoto`; otherwise the default photo is used. -->
 <section class="trust-lead">
     <div class="trust-lead-inner">
         <div class="trust-lead-card">
-            <% if (typeof dianaPhoto !== 'undefined' && dianaPhoto) { %>
-            <img class="trust-photo" src="<%= dianaPhoto %>" alt="Diana Rose, Sourcing and Family Support Lead">
-            <% } else { %>
-            <div class="trust-avatar" aria-hidden="true">DR</div>
-            <% } %>
+            <% const dianaPhotoSrc = (typeof dianaPhoto !== 'undefined' && dianaPhoto) ? dianaPhoto : '/images/team/diana-rose.jpeg'; %>
+            <img class="trust-photo" src="<%= dianaPhotoSrc %>" alt="Diana Rose, Sourcing and Family Support Lead">
             <h3>Diana Rose</h3>
             <p class="trust-role">Sourcing &amp; Family Support Lead</p>
             <a href="https://wa.me/971557862523?text=Dear%20Diana%2C%0A%0AI%20am%20interested%20in%20nanny%20support%20through%20Trusted%20Household%20Care.%0A%0AMy%20city%20is%3A%0AI%20am%20looking%20for%3A%20live-in%20%2F%20live-out%20support%0A%0APlease%20call%20me%20back%20to%20discuss%20my%20needs.%0A%0AThank%20you." class="cta-btn" target="_blank" rel="noopener">Chat with Diana Rose on WhatsApp</a>
