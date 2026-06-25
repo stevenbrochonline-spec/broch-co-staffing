@@ -1320,80 +1320,101 @@ footer {
     font-size: 0.9rem;
 }
 
-/* ── Testimonials: premium redesign ── */
+/* ── Testimonials: final premium ── */
+/* Page-specific hero (does not touch the global .page-hero used elsewhere) */
+.testimonials-hero {
+    text-align: center;
+    background: var(--white);
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 90px 5% 70px;
+}
+.testimonials-hero .eyebrow {
+    display: block;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+.testimonials-hero h1 {
+    font-family: 'Playfair Display', serif;
+    color: var(--dark);
+    font-size: 2.8rem;
+    line-height: 1.15;
+    margin: 0 0 20px;
+}
+.testimonials-hero p {
+    color: var(--gray);
+    font-size: 1.08rem;
+    line-height: 1.8;
+    font-weight: 300;
+    max-width: 640px;
+    margin: 0 auto 34px;
+}
+.gold-divider {
+    width: 70px;
+    height: 2px;
+    background: var(--gold);
+    border: 0;
+    margin: 0 auto;
+}
+
 /* Gold five-star rating (featured + grid cards) */
 .stars {
     color: var(--gold);
     font-size: 1.05rem;
     letter-spacing: 3px;
     line-height: 1;
-    margin-bottom: 16px;
 }
 
-/* Featured testimonial (Olga Fler) */
+/* Featured testimonial — premium text layout, no image/placeholder */
 .featured-testimonial {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 60px 5% 20px;
+    padding: 20px 5%;
 }
 .featured-inner {
     display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 48px;
-    align-items: center;
+    grid-template-columns: 240px 1fr;
+    gap: 56px;
     background: var(--white);
     border: 1px solid var(--border);
     border-top: 3px solid var(--gold);
-    border-radius: 6px;
+    border-radius: 12px;
     box-shadow: 0 18px 50px rgba(0,0,0,0.06);
-    padding: 48px;
+    padding: 56px;
 }
-.featured-portrait-wrap { display: flex; justify-content: center; }
-/* Fixed 4:5 box reserves the exact space of the real portrait, so dropping the
-   image in later (set `photo` in data/testimonials.js) causes no layout shift. */
-.featured-portrait {
-    display: block;
-    width: 100%;
-    max-width: 320px;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
-    border-radius: 6px;
-}
-.featured-portrait-placeholder {
+.featured-aside {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(160deg, #f4ece0, #ffffff);
-    border: 1px solid var(--border);
+    flex-direction: column;
+    gap: 14px;
 }
-.featured-monogram {
+.featured-label {
     font-family: 'Playfair Display', serif;
-    font-size: 3.4rem;
-    color: var(--gold);
-    letter-spacing: 2px;
+    color: var(--dark);
+    font-size: 1.35rem;
+    line-height: 1.2;
+    margin: 0;
 }
 .featured-content { margin: 0; }
 .featured-quote-mark {
     font-family: 'Playfair Display', serif;
-    font-size: 4rem;
-    line-height: 0.6;
+    font-size: 4.5rem;
+    line-height: 0.5;
     color: var(--gold);
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 14px;
 }
 .featured-quote {
-    font-size: 1.25rem;
-    line-height: 1.75;
+    font-size: 1.3rem;
+    line-height: 1.8;
     color: var(--dark);
     font-weight: 300;
-    margin: 0 0 20px;
+    margin: 0 0 28px;
 }
-.featured-attribution {
-    color: var(--gold);
-    font-weight: 600;
-    font-size: 1rem;
-    margin-bottom: 24px;
-}
+/* Premium badges */
 .trust-highlights {
     list-style: none;
     padding: 0;
@@ -1411,93 +1432,131 @@ footer {
     background: var(--light);
     border: 1px solid var(--border);
     border-radius: 30px;
-    padding: 8px 16px;
+    padding: 9px 18px;
 }
 .trust-check { color: var(--gold); font-weight: 700; }
 
-/* Premium trust metrics band */
+/* Grid cards — equal height, stars, gold quote mark, label + location */
+.testimonial-card { display: flex; flex-direction: column; }
+.testimonial-card .stars { margin-bottom: 14px; }
+.card-quote-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    line-height: 0.4;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 6px;
+}
+.testimonial-card figcaption { margin-top: auto; }
+.client-label {
+    display: block;
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 0.92rem;
+}
+.client-location {
+    display: block;
+    color: var(--gray);
+    font-size: 0.82rem;
+    margin-top: 2px;
+}
+
+/* Premium trust metric cards with consistent outline icons */
 .trust-metrics {
     background: var(--light);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
-    padding: 48px 5%;
-    margin-top: 24px;
+    padding: 70px 5%;
+    margin-top: 40px;
 }
 .trust-metrics-grid {
     max-width: 1100px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
 }
-.metric {
+.metric-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    padding: 34px 28px;
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    align-items: center;
+    gap: 14px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-.metric-value {
+.metric-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 38px rgba(0,0,0,0.08);
+}
+.metric-icon { color: var(--gold); line-height: 0; }
+.metric-icon svg { width: 34px; height: 34px; display: block; }
+.metric-title {
     font-family: 'Playfair Display', serif;
-    color: var(--gold);
-    font-size: 1.5rem;
-    line-height: 1.1;
+    color: var(--dark);
+    font-size: 1.05rem;
+    line-height: 1.35;
+    margin: 0;
 }
-.metric-label {
+
+/* References section + gold-outlined information box */
+.references-section {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 70px 5%;
+}
+.references-note {
+    text-align: center;
     color: var(--gray);
-    font-size: 0.82rem;
-    line-height: 1.4;
+    font-size: 0.98rem;
+    line-height: 1.8;
+    margin: 0 auto 8px;
+    max-width: 680px;
 }
-
-/* Elegant decorative quote mark on grid cards */
-.testimonial-card blockquote::before {
-    content: '\201C';
-    font-family: 'Playfair Display', serif;
-    color: var(--gold);
-    font-size: 2.4rem;
-    line-height: 0;
-    position: relative;
-    top: 0.5rem;
-    margin-right: 4px;
-}
-
-/* Highlighted references info box */
 .references-box {
-    margin-top: 40px;
-    background: #faf6ee;
-    border: 1px solid #ecdfc4;
-    border-left: 4px solid var(--gold);
-    border-radius: 6px;
-    padding: 28px 32px;
+    margin: 36px auto 0;
+    max-width: 720px;
+    background: var(--white);
+    border: 1.5px solid var(--gold);
+    border-radius: 12px;
+    padding: 34px 38px;
+    text-align: center;
 }
 .references-box h2 {
     font-family: 'Playfair Display', serif;
     color: var(--dark);
-    font-size: 1.25rem;
-    margin: 0 0 10px;
+    font-size: 1.35rem;
+    margin: 0 0 14px;
 }
 .references-box p {
     color: var(--gray);
     font-size: 0.98rem;
-    line-height: 1.7;
-    margin: 0;
+    line-height: 1.75;
+    margin: 0 0 12px;
 }
+.references-box p:last-child { margin-bottom: 0; }
 
-/* Responsive — testimonials premium */
+/* Responsive — testimonials final premium */
 @media (max-width: 900px) {
-    .trust-metrics-grid { grid-template-columns: repeat(3, 1fr); }
+    .trust-metrics-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
+    .testimonials-hero { padding: 60px 6% 50px; }
+    .testimonials-hero h1 { font-size: 2.1rem; }
     .featured-inner {
         grid-template-columns: 1fr;
-        gap: 28px;
-        padding: 32px 22px;
-        text-align: center;
+        gap: 26px;
+        padding: 34px 24px;
     }
-    .featured-portrait { max-width: 240px; }
-    .featured-quote-mark { margin-left: auto; margin-right: auto; }
-    .trust-highlights { justify-content: center; }
-    .trust-metrics-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-    .references-box { padding: 24px 20px; }
+    .featured-aside { align-items: flex-start; }
+    .trust-metrics { padding: 50px 6%; }
+    .trust-metrics-grid { grid-template-columns: 1fr; gap: 18px; }
+    .references-section { padding: 50px 6%; }
+    .references-box { padding: 28px 22px; }
 }
 
 /* ── Floating WhatsApp button (company contact) ── */

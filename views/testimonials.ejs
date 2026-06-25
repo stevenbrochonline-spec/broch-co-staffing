@@ -7,14 +7,14 @@
 <body>
     <%- include('partials/nav') %>
 
-    <section class="page-hero">
-        <h1>Testimonials</h1>
-        <p>What families say about our private, personal approach to household and childcare introductions.</p>
+    <section class="testimonials-hero">
+        <span class="eyebrow">Testimonials</span>
+        <h1>Trusted by Families Worldwide</h1>
+        <p>For over two decades, private families have trusted us to introduce household and childcare professionals with discretion, care, and lasting results. These are some of their words.</p>
+        <hr class="gold-divider">
     </section>
 
     <%
-      // Split the featured testimonial (Olga Fler) from the rest. Falls back to
-      // showing every testimonial in the grid if none is marked featured.
       var featured = testimonials.find(function (t) { return t.featured; });
       var others = testimonials.filter(function (t) { return !t.featured; });
     %>
@@ -22,22 +22,13 @@
     <% if (featured) { %>
     <section class="featured-testimonial">
         <div class="featured-inner">
-            <div class="featured-portrait-wrap">
-                <% if (featured.photo) { %>
-                <img class="featured-portrait" src="<%= featured.photo %>" width="320" height="400" loading="lazy" decoding="async" alt="Portrait of <%= featured.attribution %>">
-                <% } else { %>
-                <%# Reserved portrait slot — same dimensions as the real image so swapping it in causes no layout shift. Set `photo` in data/testimonials.js to show the real portrait; no template change needed. %>
-                <% var initials = (featured.attribution || '').split(/\s+/).map(function (w) { return w.charAt(0); }).join('').slice(0, 2).toUpperCase(); %>
-                <div class="featured-portrait featured-portrait-placeholder" role="img" aria-label="Portrait of <%= featured.attribution %> coming soon">
-                    <span class="featured-monogram" aria-hidden="true"><%= initials %></span>
-                </div>
-                <% } %>
+            <div class="featured-aside">
+                <div class="stars" role="img" aria-label="Rated 5 out of 5 stars"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+                <p class="featured-label"><%= featured.label %></p>
             </div>
             <figure class="featured-content">
-                <div class="stars" role="img" aria-label="Rated 5 out of 5 stars"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
                 <span class="featured-quote-mark" aria-hidden="true">&ldquo;</span>
                 <blockquote class="featured-quote"><%= featured.quote %></blockquote>
-                <figcaption class="featured-attribution"><%= featured.attribution %></figcaption>
                 <ul class="trust-highlights">
                     <li><span class="trust-check" aria-hidden="true">&#10003;</span> Together for 2 years</li>
                     <li><span class="trust-check" aria-hidden="true">&#10003;</span> Nanny became part of our family</li>
@@ -48,34 +39,60 @@
     </section>
     <% } %>
 
-    <section class="trust-metrics" aria-label="Why families trust us">
-        <div class="trust-metrics-grid">
-            <div class="metric"><span class="metric-value">25+</span><span class="metric-label">Years Experience</span></div>
-            <div class="metric"><span class="metric-value">Hundreds</span><span class="metric-label">of Successful Placements</span></div>
-            <div class="metric"><span class="metric-value">Global</span><span class="metric-label">International Expertise</span></div>
-            <div class="metric"><span class="metric-value">Verified</span><span class="metric-label">Candidate References</span></div>
-            <div class="metric"><span class="metric-value">On Request</span><span class="metric-label">Additional Client References Available</span></div>
-            <div class="metric"><span class="metric-value">Ongoing</span><span class="metric-label">Support</span></div>
-        </div>
-    </section>
-
     <section class="testimonials-section">
         <div class="testimonial-grid">
             <% others.forEach(function(t) { %>
             <figure class="testimonial-card">
                 <div class="stars" role="img" aria-label="Rated 5 out of 5 stars"><span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+                <span class="card-quote-mark" aria-hidden="true">&ldquo;</span>
                 <blockquote><%= t.quote %></blockquote>
-                <figcaption><%= t.attribution %></figcaption>
+                <figcaption>
+                    <span class="client-label"><%= t.label %></span>
+                    <% if (t.location) { %><span class="client-location"><%= t.location %></span><% } %>
+                </figcaption>
             </figure>
             <% }); %>
         </div>
+    </section>
+
+    <section class="trust-metrics" aria-label="Why families trust us">
+        <div class="trust-metrics-grid">
+            <div class="metric-card">
+                <span class="metric-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"></circle><path d="M9 14.5 7.5 21l4.5-2.5 4.5 2.5-1.5-6.5"></path></svg></span>
+                <p class="metric-title">25+ Years Experience</p>
+            </div>
+            <div class="metric-card">
+                <span class="metric-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="m8.5 12 2.5 2.5 4.5-5"></path></svg></span>
+                <p class="metric-title">Hundreds of Successful Placements</p>
+            </div>
+            <div class="metric-card">
+                <span class="metric-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9S14.5 18.5 12 21c-2.5-2.5-3.8-5.7-3.8-9S9.5 5.5 12 3Z"></path></svg></span>
+                <p class="metric-title">International Expertise</p>
+            </div>
+            <div class="metric-card">
+                <span class="metric-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"></path><path d="M14 3v4h4M9 12h6M9 16h6"></path></svg></span>
+                <p class="metric-title">Candidate References</p>
+            </div>
+            <div class="metric-card">
+                <span class="metric-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"></path><path d="M14 3v4h4"></path><path d="m9 14 1.8 1.8L14 12"></path></svg></span>
+                <p class="metric-title">Additional Client References</p>
+            </div>
+            <div class="metric-card">
+                <span class="metric-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"></path><path d="M4 13v3a2 2 0 0 0 2 2h1v-5H6a2 2 0 0 0-2 2Zm16 0v3a2 2 0 0 1-2 2h-1v-5h1a2 2 0 0 1 2 2Z"></path></svg></span>
+                <p class="metric-title">Ongoing Support</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="references-section">
+        <p class="references-note">To protect our clients&rsquo; privacy, most testimonials are shared anonymously.</p>
+        <p class="references-note">Additional client references and recommendation letters are available upon request.</p>
 
         <aside class="references-box">
-            <h2>Additional references available on request</h2>
-            <p>For serious prospective clients, we are glad to provide additional client references and recommendation letters during the consultation process, so you can proceed with complete confidence.</p>
+            <h2>Need additional reassurance?</h2>
+            <p>For privacy reasons, many of our clients prefer not to publish their names publicly.</p>
+            <p>We are happy to provide additional client references and recommendation letters directly to serious prospective clients upon request.</p>
         </aside>
-
-        <p class="muted center">To protect our clients&rsquo; privacy, most testimonials are shared anonymously. Additional client references and recommendation letters are available upon request.</p>
     </section>
 
     <section class="cta-section">
