@@ -1,27 +1,46 @@
-<!-- Trust / expertise lead section. The WhatsApp number is a company/business
-     contact route (Diana Rose is the company's sourcing lead), never candidate contact.
-     Diana's approved photo is shown on every page that includes this section. A page
-     may override the image by passing `dianaPhoto`; otherwise the default photo is used. -->
-<section class="trust-lead">
-    <div class="trust-lead-inner">
-        <div class="trust-lead-card">
+<!-- Diana Rose — executive profile. The WhatsApp link is a company/business contact
+     route (Diana Rose is the company's family-support lead), never candidate contact.
+     Diana's approved photo is shown on every page that includes this section; a page
+     may override the image by passing `dianaPhoto`, otherwise the default photo is used. -->
+<section class="diana-profile">
+    <div class="diana-grid">
+        <aside class="diana-card">
             <% const dianaPhotoSrc = (typeof dianaPhoto !== 'undefined' && dianaPhoto) ? dianaPhoto : '/images/team/diana-rose.jpeg'; %>
-            <img class="trust-photo" src="<%= dianaPhotoSrc %>" alt="Diana Rose, Sourcing and Family Support Lead">
-            <h3>Diana Rose</h3>
-            <p class="trust-role">Sourcing &amp; Family Support Lead</p>
-            <a href="https://wa.me/971557862523?text=Dear%20Diana%2C%0A%0AI%20am%20interested%20in%20nanny%20support%20through%20Trusted%20Household%20Care.%0A%0AMy%20city%20is%3A%0AI%20am%20looking%20for%3A%20live-in%20%2F%20live-out%20support%0A%0APlease%20call%20me%20back%20to%20discuss%20my%20needs.%0A%0AThank%20you." class="cta-btn" target="_blank" rel="noopener">Chat with Diana Rose on WhatsApp</a>
-        </div>
-        <div class="trust-lead-text">
+            <div class="diana-portrait-wrap">
+                <img class="diana-portrait" src="<%= dianaPhotoSrc %>" alt="Diana Rose, Sourcing and Family Support Lead" width="899" height="1599" loading="lazy" decoding="async">
+            </div>
+            <h3 class="diana-name">Diana Rose</h3>
+            <p class="diana-role">Sourcing &amp; Family Support Lead</p>
+            <span class="diana-badge">25+ Years Experience</span>
+        </aside>
+
+        <div class="diana-content">
             <h2>Led by 25 Years of International Household Experience</h2>
-            <p>Our review process is guided by Diana Rose, with 25 years of hands-on household and childcare experience across private homes internationally.</p>
-            <p>Having worked inside private households herself — as a housekeeper, babysitter, and household support professional — Diana brings a practical eye for reliability, discretion, and long-term family fit to every candidate we review.</p>
-            <ul class="trust-points">
-                <li>25 years of household and childcare experience</li>
-                <li>Practical background as a housekeeper, babysitter, and household support professional</li>
-                <li>Experience across Japan, Singapore, Hong Kong, Saudi Arabia, UAE, Russia, and Georgia</li>
-                <li>Focus on trained, organized, and reliable Filipino household talent</li>
-                <li>Candidate introductions coordinated only through Trusted Household &amp; Childcare</li>
-            </ul>
+            <div class="diana-blocks">
+                <div class="diana-block">
+                    <h4>International Experience</h4>
+                    <p>Japan &bull; Singapore &bull; Hong Kong &bull; Saudi Arabia &bull; UAE &bull; Russia &bull; Georgia</p>
+                </div>
+                <div class="diana-block">
+                    <h4>Professional Background</h4>
+                    <p>Former housekeeper, nanny, and household support professional with practical experience inside private households.</p>
+                </div>
+                <div class="diana-block">
+                    <h4>Selection Philosophy</h4>
+                    <p>Every candidate is personally reviewed for professionalism, discretion, reliability, and long-term family fit before introductions.</p>
+                </div>
+            </div>
         </div>
+    </div>
+
+    <div class="diana-stats">
+        <div class="diana-stat"><span class="diana-stat-num">25+</span><span class="diana-stat-label">Years Experience</span></div>
+        <div class="diana-stat"><span class="diana-stat-num">7</span><span class="diana-stat-label">Countries Worked</span></div>
+        <div class="diana-stat"><span class="diana-stat-num">100%</span><span class="diana-stat-label">Personally Reviewed</span></div>
+    </div>
+
+    <div class="diana-cta">
+        <a href="https://wa.me/971557862523?text=Dear%20Diana%2C%0A%0AI%20am%20interested%20in%20nanny%20support%20through%20Trusted%20Household%20Care.%0A%0AMy%20city%20is%3A%0AI%20am%20looking%20for%3A%20live-in%20%2F%20live-out%20support%0A%0APlease%20call%20me%20back%20to%20discuss%20my%20needs.%0A%0AThank%20you." class="cta-btn" target="_blank" rel="noopener">Chat with Diana Rose</a>
+        <a href="/#candidate-selection" class="cta-btn secondary">Our Selection Process</a>
     </div>
 </section>
