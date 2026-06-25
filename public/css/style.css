@@ -181,6 +181,12 @@ nav {
 
 /* ── Hero ── */
 .hero {
+    /* Horizontal focal point of the hero photo per breakpoint. Tune these once
+       the real image is in place — no HTML changes needed. Lower % shifts the
+       crop left, higher % shifts it right (toward the nanny + child). */
+    --hero-focus-desktop: 72%;
+    --hero-focus-tablet: 68%;
+    --hero-focus-mobile: 62%;
     position: relative;
     min-height: 86vh;
     display: flex;
@@ -202,7 +208,7 @@ nav {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 72% center;
+    object-position: var(--hero-focus-desktop) center;
 }
 /* Dark overlay only behind the text: strong at the left, fading to clear over the
    right of the photo so faces stay bright and uncovered. */
@@ -837,11 +843,16 @@ footer {
     .how-trust-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* Tablet hero focal point */
+@media (max-width: 1024px) {
+    .hero-img { object-position: var(--hero-focus-tablet) center; }
+}
+
 @media (max-width: 768px) {
     /* Different crop on mobile: text drops to the bottom over a bottom-up overlay,
        keeping the upper part of the photo (faces) visible and text-free. */
     .hero { min-height: 84vh; padding: 70px 6% 56px; align-items: flex-end; }
-    .hero-img { object-position: 64% center; }
+    .hero-img { object-position: var(--hero-focus-mobile) center; }
     .hero-overlay {
         background: linear-gradient(180deg,
             rgba(20,16,11,0) 0%,
