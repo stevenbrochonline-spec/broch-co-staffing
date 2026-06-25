@@ -1415,7 +1415,13 @@ footer {
     body {
         width: 100%;
         max-width: 100%;
+        /* Use clip (not hidden) so horizontal overflow is still contained without
+           turning html/body into a scroll container. A scroll-container ancestor
+           breaks position:sticky interactivity on mobile (iOS Safari), which left
+           the sticky nav's hamburger untappable until the page was scrolled off
+           the hero. `hidden` is kept as a fallback for engines without `clip`. */
         overflow-x: hidden;
+        overflow-x: clip;
     }
 
     nav {
