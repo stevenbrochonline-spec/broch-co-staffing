@@ -1069,6 +1069,84 @@ footer {
     }
 }
 
+/* ── Candidates page — premium split hero ── */
+.candidates-hero {
+    background: var(--white);
+    padding: 84px 5%;
+}
+.candidates-hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 440px;
+    gap: 56px;
+    align-items: center;
+}
+.candidates-hero-text .eyebrow {
+    display: block;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+.candidates-hero-text h1 {
+    font-family: 'Playfair Display', serif;
+    color: var(--dark);
+    font-size: 2.8rem;
+    line-height: 1.14;
+    margin: 0 0 18px;
+}
+.candidates-hero-text p {
+    color: var(--gray);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    font-weight: 300;
+    margin: 0;
+}
+.candidates-hero-trust {
+    list-style: none;
+    padding: 0;
+    margin: 26px 0 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 24px;
+}
+.candidates-hero-trust li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.92rem;
+    color: var(--dark);
+    font-weight: 500;
+}
+.candidates-hero-trust .cht-icon { color: var(--gold); line-height: 0; display: inline-flex; flex-shrink: 0; }
+.candidates-hero-trust .cht-icon svg { width: 22px; height: 22px; }
+.candidates-hero-media { display: flex; justify-content: center; }
+/* LCP hero image: width/height attrs + aspect-ratio reserve space (no CLS).
+   Capped width keeps the source crop crisp. */
+.candidates-hero-img {
+    display: block;
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    aspect-ratio: 5 / 4;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 18px 50px rgba(0,0,0,0.12);
+}
+@media (max-width: 900px) {
+    .candidates-hero-inner { grid-template-columns: 1fr; gap: 32px; }
+    .candidates-hero-media { order: -1; }
+    .candidates-hero-img { max-width: 480px; }
+}
+@media (max-width: 768px) {
+    .candidates-hero { padding: 56px 6%; }
+    .candidates-hero-text h1 { font-size: 2.1rem; }
+    .candidates-hero-trust { grid-template-columns: 1fr; gap: 12px; }
+}
+
 /* ── Privacy / commercial-protection note ── */
 .protection-note {
     background: #f0f0f0;
@@ -1927,6 +2005,7 @@ footer {
     }
 
     .page-hero,
+    .candidates-hero,
     .candidate-profile,
     .about-content,
     .services-preview,
