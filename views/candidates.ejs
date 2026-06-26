@@ -7,9 +7,23 @@
 <body>
     <%- include('partials/nav') %>
 
-    <section class="page-hero">
-        <h1>Private Candidate Shortlist</h1>
-        <p>A private, curated preview of household and childcare professionals — personally reviewed and screened, with reference checks where available.</p>
+    <section class="candidates-hero">
+        <div class="candidates-hero-inner">
+            <div class="candidates-hero-text">
+                <span class="eyebrow">Trusted Household &amp; Childcare</span>
+                <h1>Private Candidate Shortlist</h1>
+                <p>A private, curated preview of household and childcare professionals — personally reviewed and screened, with reference checks where available.</p>
+                <ul class="candidates-hero-trust">
+                    <li><span class="cht-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="m8.5 12 2.5 2.5 4.5-5"></path></svg></span> Personally Reviewed</li>
+                    <li><span class="cht-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6z"></path><path d="m9 11.5 2 2 4-4"></path></svg></span> Reference Checked</li>
+                    <li><span class="cht-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="1.5"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></span> Private Introductions</li>
+                    <li><span class="cht-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.3-7-9.5A3.5 3.5 0 0 1 12 8a3.5 3.5 0 0 1 7 2.5C19 15.7 12 20 12 20Z"></path></svg></span> Family Confidentiality</li>
+                </ul>
+            </div>
+            <div class="candidates-hero-media">
+                <img class="candidates-hero-img" src="/images/candidates/candidates-hero.webp" alt="A nanny playing with a young child in a bright, elegant family home" width="312" height="256" loading="eager" fetchpriority="high" decoding="async">
+            </div>
+        </div>
     </section>
 
     <section class="protection-note">
