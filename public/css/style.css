@@ -807,6 +807,33 @@ footer {
     .how-trust-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* Navigation collapses to the hamburger at <=980px (was 768px). The full desktop
+   menu needs ~966px, so it overflowed between 769–980px; collapsing here removes
+   that overflow/scroll while leaving desktop (>980px) and mobile (<=768px)
+   behaviour unchanged. Includes the open-dropdown + tap/stacking rules. */
+@media (max-width: 980px) {
+    .nav-links { display: none; }
+    .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        padding: 20px 5%;
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        z-index: 2000;
+    }
+    .hamburger {
+        display: flex;
+        position: relative;
+        z-index: 2001;
+        pointer-events: auto;
+    }
+}
+
 /* Tablet hero focal point */
 @media (max-width: 1024px) {
     .hero-img { object-position: var(--hero-focus-tablet) center; }
@@ -831,20 +858,6 @@ footer {
     .hero-trust-bar { padding: 16px 6%; }
     .hero-trust-bar ul { gap: 10px 22px; }
     .hero-trust-bar li { font-size: 0.84rem; }
-    .nav-links { display: none; }
-    .nav-links.open {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--white);
-        padding: 20px 5%;
-        border-bottom: 1px solid var(--border);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
-    .hamburger { display: flex; }
     .logo { font-size: 1.1rem; letter-spacing: 0.5px; }
     .why-grid,
     .about-grid,
@@ -2098,18 +2111,7 @@ footer {
     }
 }
 
-/* ── Mobile menu click/stacking fix ── */
-@media (max-width: 768px) {
-    .hamburger {
-        position: relative;
-        z-index: 2001;
-        pointer-events: auto;
-    }
-
-    .nav-links.open {
-        z-index: 2000;
-    }
-}
+/* (Mobile menu click/stacking rules now live in the <=980px navigation block above.) */
 
 /* ── Introduction Agreement ── */
 .agreement-section {
